@@ -9,8 +9,8 @@ import CakeDecorating from './cake_decorating';
 //import Cookie_el from './cookie';
 
 export class Home extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             show_page: 'tiers',
             width_tiers1: '25',
@@ -24,7 +24,7 @@ export class Home extends React.Component {
             elDecor: '',
         }
         this.addElement = this.addElement.bind(this);
-
+        // console.log(this.props.user.width_tiers1);
     }
 
     StepTiers(value1, value2, value3, value4, value5, value6) {
@@ -51,7 +51,7 @@ export class Home extends React.Component {
         } else if (props.step === 'frost_cake') {
             return <FrostCake StepFrostCake = {props.handler1}></FrostCake>
         } else if (props.step === 'cake_decorating') {
-            return <CakeDecorating addElement={props.add}/>
+            return <CakeDecorating addElement={props.add} />
         }
     }
 
@@ -81,7 +81,8 @@ export class Home extends React.Component {
                     <div className = {this.state.class} 
                     style={{ width: `${this.state.width_tiers3 * 5}px`, 
                     height: `${this.state.height_tiers3 * 5}px`, 
-                    background: this.state.color_cake }}></div>
+                    background: this.state.color_cake }}>
+                    </div>
 
                     <div className = {this.state.class} 
                     style={{ width: `${this.state.width_tiers2 *5}px`, 
@@ -99,7 +100,7 @@ export class Home extends React.Component {
                 <button onClick={() => this.setState({ show_page: 'tiers' })}>Ярусы</button>
                 <button onClick={() => this.setState({ show_page: 'frost_cake' })}>Покрытие торта</button>
                 <button onClick={() => this.setState({ show_page: 'cake_decorating' })}>              Украшение торта</button>
-                <this.Page step={this.state.show_page} handler={(this.StepTiers.bind(this))} handler1={(this.StepFrostCake.bind(this))} ></this.Page>
+                <this.Page step={this.state.show_page} handler={(this.StepTiers.bind(this))} handler1={(this.StepFrostCake.bind(this))}  user={props.user}></this.Page>
                 {/* {this.state.elDecor ? <Cookie_el addElement={this.addElement}/> : null} */}
             </div>
         )
