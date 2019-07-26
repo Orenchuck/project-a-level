@@ -53,12 +53,12 @@ export default class CakeDecorating extends React.Component {
     what_decor () {
         switch (this.state.decor_type){
           case 0: this.setState ({all_list: true}); break;
-          case 1: return <Cookie_el add={this.add}/>
-          case 2: return <Lollipop_el />;
+          case 1: return <Cookie_el add={this.props.addElement}/>
+          case 2: return <Lollipop_el add={this.props.addElement}/>;
         //   case 3: return <Foundant_el />;
-          case 4: return <Flower_el />; 
-          case 5: return <Macaron_el />; 
-          case 6: return <Fruit_el />; 
+          case 4: return <Flower_el add={this.props.addElement}/>; 
+          case 5: return <Macaron_el add={this.props.addElement}/>; 
+          case 6: return <Fruit_el add={this.props.addElement} />; 
         }
         
     }
