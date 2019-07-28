@@ -79,15 +79,15 @@ export class Home extends React.Component {
         left: `${item.x}px`, width: '10%'}}></img></div>)
         })
         return (
-            <div>
+            <div id='wrapper'>
                 <div id='home'>
-                <div id='cake_place' style={{border: '3px solid green'}}>
-                    {all}
+                <div id='cake_place'>
+                 {/*  {all} */}
                     <img src={this.state.elDecor.src} 
                     style={{display: 'absolute', top: '30px', 
                     left: '25px', width: '10%'}}></img>
 
-                    <div className = {this.state.class} 
+                   <div className = {this.state.class} 
                     style={{ width: `${this.state.width_tiers3 * 5}px`, 
                     height: `${this.state.height_tiers3 * 5}px`, 
                     background: this.state.color_cake }}></div>
@@ -100,14 +100,17 @@ export class Home extends React.Component {
                     <div className = {this.state.class} 
                     style={{ width: `${this.state.width_tiers1 * 5}px`, 
                     height: `${this.state.height_tiers1 *5}px`, 
-                    background: this.state.color_cake }}></div>
+                    background: this.state.color_cake }}></div> 
 
                 </div>
                 </div>
 
-                <button onClick={() => this.setState({ show_page: 'tiers' })}>Ярусы</button>
-                <button onClick={() => this.setState({ show_page: 'frost_cake' })}>Покрытие торта</button>
-                <button onClick={() => this.setState({ show_page: 'cake_decorating' })}>              Украшение торта</button>
+                <nav>
+                <button className='nav_button' onClick={() => this.setState({ show_page: 'tiers' })}>Ярусы торта</button>
+                <button className='nav_button' onClick={() => this.setState({ show_page: 'frost_cake' })}>Покрытие торта</button>
+                <button className='nav_button' onClick={() => this.setState({ show_page: 'cake_decorating' })}>Украшение торта</button>
+                </nav>
+
                 <this.Page step={this.state.show_page} 
                 handler={(this.StepTiers.bind(this))} 
                 handler1={(this.StepFrostCake.bind(this))}

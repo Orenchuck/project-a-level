@@ -1,17 +1,36 @@
-#home{
-    width: 300px;
-    height: 500px;
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+}
+
+#root{
+    display: flex;
+}
+
+#wrapper{
+    width: 768px;
+    margin: auto;
     border: 1px solid #520599;
+    background-image: url('src/bg.png');
+}
+
+ /* CAKE PLACE ===========*/
+#home{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    /*justify-content: flex-end;*/
 }
 
 #cake_place {
-    /* width: 300px;
-    height: 500px; */
-    /* border: 3px solid rgb(222, 245, 222); */
+    width: 70%;
+    margin: auto;
+    height: 300px;
+    border: 3px solid green;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -21,5 +40,204 @@
 
 #decor_list {
     list-style-type: none;
+    position: relative;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-right: 40px;
 }
 
+  /* LOWER PART WITH OPTIONS ====================*/
+nav{
+    width: 100%;
+    background-color: #8A275C;
+}
+
+.nav_button{
+    background-color: #8A275C;
+    color: #F3E6ED;
+    width: 33%;
+    border: none;
+    /*height: 6vh;*/
+    font-weight: bold;
+    outline-color: none;
+}
+
+.nav_button:hover{
+    background-color: rgb(90, 14, 54);
+    cursor: pointer;
+}
+
+.nav_button:active{
+    background-color: rgb(90, 14, 54);
+    border: none;
+}
+
+#options{
+    width: 753px;
+    font-size: 14px;
+    line-height: 4vh;
+    padding: 15px 0px 0px 15px; 
+    text-align: start;
+}
+
+.headline{
+    position: relative;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-right: 40px;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 30px;
+    width: 98%;
+  }
+  
+.group > input {
+    font-size: 14px;
+    padding: 10px;
+    display: block;
+    width: 97%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+
+.group > input:focus {
+    outline: none;
+}
+  /* LABEL ======================================= */
+.size {
+    color: #999;
+    font-size: 14px;
+    position: absolute;
+    pointer-events: none;
+    top: 15px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+  
+/* active state */
+input:focus ~ label, input:valid ~ label {
+    top: -15px;
+    font-size: 14px;
+    color: #5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.bar:before, .bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+    left: 50%;
+}
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+    width: 50%;
+}
+
+button{
+    background-color: #8A275C;
+    color: #F3E6ED;
+    width: 33.3%;
+    height: 4vh;
+    margin: 1px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+select{
+    background-color: #8A275C;
+    color: #F3E6ED;
+    width: 33.3%;
+    height: 4vh;
+    margin: 1px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.color{
+    width: 10%;
+    display: flex;
+    position: relative;
+
+}
+
+.inner{
+    display: flex;
+    position: relative;
+}
+
+#decor_list{
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
+
+#decor_list > li{
+  margin: 3%;
+    
+}
+
+.destroy{
+    width: 25px;
+    border-radius: 30%;
+}
+
+.item_decor{
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .wrapper{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .wrapper{
+        margin: auto;
+        width: 768px;
+    }
+}

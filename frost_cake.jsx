@@ -17,17 +17,24 @@ export default class FrostCake extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>Выберите цвет <input type='color' value={this.state.color} onChange={this.ChangeColor}></input></div>
+            <div id='options'>
+                <div className='inner'>
+                    <span className='headline'>Выберите цвет</span> 
+                    <input  className='color'
+                            type='color' 
+                            value={this.state.color} 
+                            onChange={this.ChangeColor}>
+                    </input>
+                </div>
                 <label>
-         <p>Выберите покрытие торта:</p> 
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="cream">Крем</option>
-            <option value="fondant">Мастика</option>
-            <option value="icing">Зеркальная глазурь</option>
-            <option value="velour">Велюр</option>
-          </select>
-        </label>
+                    <p className='headline'>Выберите покрытие торта:</p> 
+                    <select value={this.state.value} onChange={this.handleChange}>
+                        <option className='cream' value="cream">Крем</option>
+                        <option className="fondant" value="fondant">Мастика</option>
+                        <option className="icing" value="icing">Зеркальная глазурь</option>
+                        <option className="velour" value="velour">Велюр</option>
+                    </select>
+                </label>
                 <button onClick={() => this.props.StepFrostCake(this.state.color)}>Ок</button>
             </div>
         )

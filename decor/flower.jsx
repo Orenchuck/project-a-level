@@ -22,8 +22,8 @@ export default class Flower_el extends React.Component {
 
     render () {
         return (
-            <div>
-                {this.state.showPage ? (<div>
+            <div >
+                {this.state.showPage ? (<div className='headline'>
                 <img src='https://png.pngtree.com/png-clipart/20190604/original/pngtree-rose-vector-png-image_1079591.jpg' 
                 style={{width: '7vh'}}
                 onClick = {() => {this.props.add(this.state.elDecor)}}></img>
@@ -48,20 +48,24 @@ export default class Flower_el extends React.Component {
                 style={{width: '7vh'}}
                 onClick = {() => {this.props.add(this.state.elDecor)}}></img>
                 <br/>
-                <label> Если хотите добавить свое подготовленное изображение
+
+                <label className='headline'> Если хотите добавить свое подготовленное изображение
                      - вставьте на него ссылку
-                    <input type="text" onChange={this.onChange}></input></label>
+                    <input type="text" onChange={this.onChange}></input>
+                </label>
                     <br/>
-                    <img src={this.state.elDecor} style={{width: '7vh'}}
-                onClick = {() => {this.props.add(this.state.elDecor)}}></img>
-                <br/>
-                <button>Ok</button>
-                <div>Удалить фон у картинки и сделать его прозрачным можно
+                <img src={this.state.elDecor} 
+                     style={{width: '7vh'}}
+                    onClick = {() => {this.props.add(this.state.elDecor)}}>
+                </img>
+                    <br/>
+                <button className='button'>Ok</button>
+                <div >Удалить фон у картинки и сделать его прозрачным можно
                      в приложении &nbsp;
                      <a target="_blank" style={{textDecoration: 'none'}} 
                      href="https://www.imgonline.com.ua/replace-white-background-with-transparent.php">
                        IMGonline.com.ua</a> </div>
-                <button onClick ={this.onClick}>Назад</button>
+                <button className='button' onClick ={this.onClick}>Назад</button>
                 </div>) : <CakeDecorating />}
                 
             </div>

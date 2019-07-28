@@ -69,41 +69,58 @@ export default class CakeDecorating extends React.Component {
                 {this.state.all_list ? (<ul id='decor_list'>
                     <li>
                         <div onClick = {this.cookie}>
-                            <input type="radio"></input>
-                            <label >Добавить пряник</label>
+                            <label className='item_decor'>
+                                <input type="radio"></input>
+                                Добавить пряник
+                            </label>
                             <button className='destroy'>x</button>
                         </div>
                     
                 </li>
                 <li>
                     <div onClick = {this.lollipop}>
-                        <label><input type="radio"></input>Добавить леденец</label>
+                        <label className='item_decor'>
+                            <input type="radio"></input>
+                            Добавить леденец
+                        </label>
                         <button className='destroy'>x</button>
                     </div>
                 </li>
                 <li>
                     <div onClick = {this.cookie}>
-                     <label><input type="radio"></input>Добавить фигурку из мастики</label>
-                     <button className='destroy'>x</button>   
+                        <label className='item_decor'>
+                            <input type="radio"></input>
+                            Добавить фигурку из мастики
+                        </label>
+                        <button className='destroy'>x</button>   
                     </div>
                 </li>
                 <li>
                     <div onClick = {this.flower}>
-                      <label><input type="radio"></input>Добавить цветок</label>  
-                      <button className='destroy'>x</button>
+                        <label className='item_decor'>
+                            <input type="radio"></input>
+                            Добавить цветок
+                        </label>  
+                        <button className='destroy'>x</button>
                     </div>
                     
                 </li>
                 <li>
                     <div onClick = {this.macaron}>
-                        <label><input type="radio"></input>Добавить макарон</label>
+                        <label className='item_decor'>
+                            <input type="radio"></input>
+                            Добавить макарон
+                        </label>
                         <button className='destroy'>x</button>
                     </div>
                     
                 </li>
                 <li>
                     <div onClick = {this.fruit}>
-                        <label><input type="radio"></input>Добавить фрукт или ягоду</label>
+                        <label className='item_decor'>
+                            <input type="radio"></input>
+                            Добавить фрукт или ягоду
+                        </label>
                         <button className='destroy'>x</button>
                     </div>
                     

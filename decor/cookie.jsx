@@ -40,17 +40,21 @@ export default class Cookie_el extends React.Component {
 
     render () {
         return (
-            <div>
+            <div id='options'>
                 {this.state.showPage ? (
-                    <div>
-                    <img src={this.state.elDecor} style={{width: '10vh'}}
-                onClick = {() => {this.props.add(this.state.elDecor)}}></img>
-                <br/>
-                <label> Вставьте ссылку на картинку
-                    <input type="text" onChange={this.onChange}></input></label>
-                <button>Ok</button>
-                <button onClick ={this.onClick}>Назад</button>
-                </div>
+                    <div className='headline'>
+                        <img src={this.state.elDecor} 
+                             style={{width: '10vh'}}
+                             onClick = {() => {this.props.add(this.state.elDecor)}}>
+                        </img>
+                        <br/>
+                        <label className='item_decor'> Вставьте ссылку на картинку</label>
+                            <input type="text" onChange={this.onChange}></input>
+                        <div className='button'>
+                            <button>Ok</button>
+                            <button onClick ={this.onClick}>Назад</button>
+                        </div>
+                    </div>
                 ) : <CakeDecorating />}
             </div>
         );

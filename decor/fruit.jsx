@@ -56,7 +56,7 @@ export default class Fruit_el extends React.Component {
                 style={{width: '7vh'}}
                 onClick = {() => {this.props.add(this.state.elDecor)}}></img>
                 <br/>
-                <label> Если хотите добавить свое подготовленное изображение
+                <label className='headline'> Если хотите добавить свое подготовленное изображение
                      - вставьте на него ссылку
                     <input type="text" onChange={this.onChange}></input></label>
                     <br/>
@@ -64,7 +64,7 @@ export default class Fruit_el extends React.Component {
                 onClick = {() => {this.props.add(this.state.elDecor)}}></img>
                 <br/>
                 <button>Ok</button>
-                <div>Удалить фон у картинки и сделать его прозрачным можно
+                <div className='headline'>Удалить фон у картинки и сделать его прозрачным можно
                      в приложении &nbsp;
                      <a target="_blank" style={{textDecoration: 'none'}} 
                      href="https://www.imgonline.com.ua/replace-white-background-with-transparent.php">

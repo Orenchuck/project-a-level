@@ -16,10 +16,10 @@ export default class Tiers extends React.Component {
         this.state = {
             width_tiers1: '',
             height_tiers1: '',
-            width_tiers2: '0',
-            height_tiers2: '0',
-            width_tiers3: '0',
-            height_tiers3: '0',
+            width_tiers2: '',
+            height_tiers2: '',
+            width_tiers3: '',
+            height_tiers3: '',
             tiers2: 'none',
             tiers3: 'none',
         }
@@ -76,24 +76,78 @@ export default class Tiers extends React.Component {
     render() {
         this.props.Updata;
         return (
-            <div>
-                <div>Первый ярус
-                   <div>Ширина яруса<input type='number' value={this.state.width_tiers1} onChange={this.ChangeWidthTiers1} ></input></div>
-                    <div>Высота яруса<input type='number' value={this.state.height_tiers1} onChange={this.ChangeHeightTiers1}></input></div>
+            <div id='options'>
+                <div>
+                    <div className='headline'>Первый ярус</div>
+
+                   <div className='group'>{/*Ширина яруса*/}
+                       <input type='number' min='10'
+                              value={this.state.width_tiers1} 
+                              onChange={this.ChangeWidthTiers1} 
+                              required>
+                        </input>
+                        <span className='bar'></span>
+                        <label className='size'>Ширина яруса</label>
+                    </div>
+
+                    <div className='group'>{/*Высота яруса*/}
+                        <input type='number' min='3'
+                               value={this.state.height_tiers1} 
+                               onChange={this.ChangeHeightTiers1} 
+                               required>
+                        </input>
+                        <span className='bar'></span>
+                        <label className='size'>Высота яруса</label>
+                    </div>
+
                     <button onClick={this.ClickAddTiers1}>Добавить ярус</button>
                 </div>
-                <div style={{ display: this.state.tiers2 }}>Второй ярус
-                <div>Ширина яруса<input type='number' value={this.state.width_tiers2} onChange={this.ChangeWidthTiers2}></input></div>
-                    <div>Высота яруса<input type='number' value={this.state.height_tiers2} onChange={this.ChangeHeightTiers2}></input></div>
+
+                <div style={{ display: this.state.tiers2 }}>
+
+                    <div className='headline'>Второй ярус</div>
+                    <div className='group'>{/*Ширина яруса*/}
+                        <input type='number' min='10'
+                               value={this.state.width_tiers2} 
+                               onChange={this.ChangeWidthTiers2}>
+                        </input>
+                        <span className='bar'></span>
+                        <label className='size'>Ширина яруса</label>
+                    </div>
+
+                    <div className='group'>{/*Высота яруса*/}
+                        <input type='number' min='3'
+                               value={this.state.height_tiers2} 
+                               onChange={this.ChangeHeightTiers2}>
+                        </input>
+                        <span className='bar'></span>
+                        <label className='size'>Высота яруса</label>
+                    </div>
+
                     <button onClick={this.ClickAddTiers2}>Добавить ярус</button>
                 </div>
-                <div style={{ display: this.state.tiers3 }}>Третий ярус
-                <div>Ширина яруса<input type='number' value={this.state.width_tiers3} onChange={this.ChangeWidthTiers3}></input></div>
-                    <div>Высота яруса<input type='number' value={this.state.height_tiers3} onChange={this.ChangeHeightTiers3}></input></div>
-                    <button>Добавить ярус</button>
+
+                <div style={{ display: this.state.tiers3 }}>
+                <div className='headline'>Третий ярус</div>
+                <div className='group'>{/*Ширина яруса*/}
+                    <input type='number' min='10'
+                           value={this.state.width_tiers3} 
+                           onChange={this.ChangeWidthTiers3}>
+                    </input>
+                    <span className='bar'></span>
+                    <label className='size'>Ширина яруса</label>
                 </div>
-                <button onClick = {this.ClickButton}>OK</button>
-                
+                <div className='group'>{/*Высота яруса*/}
+                    <input type='number' min='3'
+                            value={this.state.height_tiers3} 
+                            onChange={this.ChangeHeightTiers3}>
+                    </input>
+                    <span className='bar'></span>
+                    <label className='size'>Высота яруса</label>
+                </div>
+                <button>Добавить ярус</button>
+                </div>
+                <button onClick = {this.ClickButton}>OK</button>   
             </div>
         )
     }

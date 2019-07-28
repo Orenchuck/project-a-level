@@ -22,7 +22,7 @@ export default class Lollipop_el extends React.Component {
 
     render () {
         return (
-            <div>
+            <div id='options'>
                 {this.state.showPage ? (
                     <div>
                    <img src='https://st3.depositphotos.com/1009676/16362/v/1600/depositphotos_163629734-stock-illustration-sweet-colorful-lollipop.jpg'
@@ -33,7 +33,7 @@ export default class Lollipop_el extends React.Component {
                  style={{width: '10vh'}}
                 onClick = {() => {this.props.add(this.state.elDecor)}}></img>
                 <br/>
-                <label> Если хотите добавить свое подготовленное изображение
+                <label className='headline'> Если хотите добавить свое подготовленное изображение
                      - вставьте на него ссылку
                     <input type="text" onChange={this.onChange}></input></label>
                     <br/>
@@ -41,7 +41,7 @@ export default class Lollipop_el extends React.Component {
                 onClick = {() => {this.props.add(this.state.elDecor)}}></img>
                 <br/>
                 <button>Ok</button>
-                <div>Удалить фон у картинки и сделать его прозрачным можно
+                <div className='headline'>Удалить фон у картинки и сделать его прозрачным можно
                      в приложении &nbsp;
                      <a target="_blank" style={{textDecoration: 'none'}} 
                      href="https://www.imgonline.com.ua/replace-white-background-with-transparent.php">
