@@ -9,14 +9,10 @@ export class Home extends React.Component {
         super();
         this.state = {
             show_page: 'tiers',
-            width_tiers1: '25',
-            height_tiers1: '10',
-            width_tiers2: '0',
-            height_tiers2: '0',
-            width_tiers3: '0',
-            height_tiers3: '0',
+            width_tiers: [30, 0, 0],
+            height_tiers: [10, 0, 0],
             color_cake: '#520599',
-            class: '',
+            class: 'cream',
             elDecor: {},
             allDecor: [{src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8GaBDcMqURldUayY4k_2ETMtJbkb3POgNu8likh-eg-DuwNmH',
         x: 0, y: 0},
@@ -29,27 +25,27 @@ export class Home extends React.Component {
 
     }
 
+   
+        
     StepTiers(value1, value2, value3, value4, value5, value6) {
+         if(value1 < 115 && value2 < 115 && value3 < 115 && value4< 115 && value5 < 115 && value6 < 115){
         this.setState({
-            width_tiers1: value1,
-            height_tiers1: value2,
-            width_tiers2: value3,
-            height_tiers2: value4,
-            width_tiers3: value5,
-            height_tiers3: value6
-        })
+            width_tiers: [value1, value3, value5],
+            height_tiers: [value2, value4, value6]
+        })}
     }
 
         StepFrostCake(value1, value2){
             this.setState({
                 color_cake: value1,
+                class: value2,
             })
         }
     
     Page(props) {
 
         if (props.step === 'tiers') {
-            return <Tiers StepTiers={props.handler} />
+            return <Tiers StepTiers={props.handler}  Arr = {props.arr}/>
         } else if (props.step === 'frost_cake') {
             return <FrostCake StepFrostCake = {props.handler1}></FrostCake>
         } else if (props.step === 'cake_decorating') {
@@ -88,18 +84,18 @@ export class Home extends React.Component {
                     left: '25px', width: '10%'}}></img>
 
                    <div className = {this.state.class} 
-                    style={{ width: `${this.state.width_tiers3 * 5}px`, 
-                    height: `${this.state.height_tiers3 * 5}px`, 
+                    style={{ width: `${this.state.width_tiers[2] * 5}px`, 
+                    height: `${this.state.height_tiers[2] * 5}px`, 
                     background: this.state.color_cake }}></div>
 
                     <div className = {this.state.class} 
-                    style={{ width: `${this.state.width_tiers2 *5}px`, 
-                    height: `${this.state.height_tiers2 *5}px`, 
+                    style={{ width: `${this.state.width_tiers[1] *5}px`, 
+                    height: `${this.state.height_tiers[1] *5}px`, 
                     background: this.state.color_cake }}></div>
 
                     <div className = {this.state.class} 
-                    style={{ width: `${this.state.width_tiers1 * 5}px`, 
-                    height: `${this.state.height_tiers1 *5}px`, 
+                    style={{ width: `${this.state.width_tiers[0] * 5}px`, 
+                    height: `${this.state.height_tiers[0] *5}px`, 
                     background: this.state.color_cake }}></div> 
 
                 </div>
@@ -114,7 +110,8 @@ export class Home extends React.Component {
                 <this.Page step={this.state.show_page} 
                 handler={(this.StepTiers.bind(this))} 
                 handler1={(this.StepFrostCake.bind(this))}
-                addElement={(this.addElement.bind(this))} ></this.Page>
+                addElement={(this.addElement.bind(this))}
+                arr = {[{}, {}]} ></this.Page>
 
                 {/* {this.state.elDecor ? <Cookie_el addElement={this.addElement}/> : null} */}
             </div>

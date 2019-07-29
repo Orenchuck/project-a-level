@@ -30,12 +30,13 @@ body{
     width: 70%;
     margin: auto;
     height: 300px;
-    border: 3px solid green;
+    border: 2px  dotted #e6a9e67a;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     padding: 20px 10px 100px 10px;
+    background: #ffffffad;
 }
 
 #decor_list {
@@ -228,6 +229,41 @@ select{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+
+/* !!!! changes in frost_cake !!! */
+
+input[type="color"]{
+    background-color: #ffffff73;
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1ps solid snow;
+    box-shadow: 0 2px 4px  #cca1e9;
+    text-align: center;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+#options button{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
 
 @media screen and (max-width: 768px){
     .wrapper{

@@ -1,17 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-//import Emitter from "./Emitter";
 
 
 export default class Tiers extends React.Component {
     constructor(props) {
         super(props);
-
-        // Emitter.on(this,"data-send", (f)=>{
-        //     console.log("Sended : " + f);
-        // });
-
-        // Emitter.emit("data-send", "One");
 
         this.state = {
             width_tiers1: '',
@@ -20,8 +12,6 @@ export default class Tiers extends React.Component {
             height_tiers2: '',
             width_tiers3: '',
             height_tiers3: '',
-            tiers2: 'none',
-            tiers3: 'none',
         }
         this.ChangeWidthTiers1 = this.ChangeWidthTiers1.bind(this);
         this.ChangeHeightTiers1 = this.ChangeHeightTiers1.bind(this);
@@ -29,11 +19,12 @@ export default class Tiers extends React.Component {
         this.ChangeHeightTiers2 = this.ChangeHeightTiers2.bind(this);
         this.ChangeWidthTiers3 = this.ChangeWidthTiers3.bind(this);
         this.ChangeHeightTiers3 = this.ChangeHeightTiers3.bind(this);
-        this.ClickAddTiers1 = this.ClickAddTiers1.bind(this);
-        this.ClickAddTiers2 = this.ClickAddTiers2.bind(this);
         this.ClickButton = this.ClickButton.bind(this);
 
+        
+        
     }
+
     ChangeWidthTiers1() {
         this.setState({ width_tiers1: event.target.value });
      }
@@ -41,9 +32,6 @@ export default class Tiers extends React.Component {
         this.setState({ height_tiers1: event.target.value });
      }
 
-     ClickAddTiers1(){
-        this.setState({ tiers2: 'block' });
-     }
 
      ChangeWidthTiers2() {
         this.setState({ width_tiers2: event.target.value });
@@ -52,9 +40,6 @@ export default class Tiers extends React.Component {
         this.setState({ height_tiers2: event.target.value });
      }
 
-     ClickAddTiers2(){
-        this.setState({ tiers3: 'block' });
-     }
 
      ChangeWidthTiers3() {
         this.setState({ width_tiers3: event.target.value });
@@ -66,15 +51,14 @@ export default class Tiers extends React.Component {
     
 
      ClickButton(){
-         this.props.StepTiers(this.state.width_tiers1, this.state.height_tiers1, 
-            this.state.width_tiers2,  this.state.height_tiers2,
-            this.state.width_tiers3, this.state.height_tiers3);
+         this.props.StepTiers(+this.state.width_tiers1, +this.state.height_tiers1, 
+           +this.state.width_tiers2,  +this.state.height_tiers2,
+           +this.state.width_tiers3, +this.state.height_tiers3);
      }
 
     
 
     render() {
-        this.props.Updata;
         return (
             <div id='options'>
                 <div>
@@ -99,11 +83,9 @@ export default class Tiers extends React.Component {
                         <span className='bar'></span>
                         <label className='size'>Высота яруса</label>
                     </div>
-
-                    <button onClick={this.ClickAddTiers1}>Добавить ярус</button>
                 </div>
 
-                <div style={{ display: this.state.tiers2 }}>
+                <div >
 
                     <div className='headline'>Второй ярус</div>
                     <div className='group'>{/*Ширина яруса*/}
@@ -124,10 +106,9 @@ export default class Tiers extends React.Component {
                         <label className='size'>Высота яруса</label>
                     </div>
 
-                    <button onClick={this.ClickAddTiers2}>Добавить ярус</button>
                 </div>
 
-                <div style={{ display: this.state.tiers3 }}>
+                <div >
                 <div className='headline'>Третий ярус</div>
                 <div className='group'>{/*Ширина яруса*/}
                     <input type='number' min='10'
@@ -145,13 +126,9 @@ export default class Tiers extends React.Component {
                     <span className='bar'></span>
                     <label className='size'>Высота яруса</label>
                 </div>
-                <button>Добавить ярус</button>
                 </div>
-                <button onClick = {this.ClickButton}>OK</button>   
+                <button onClick = {this.ClickButton}>Добавить ярусы</button>   
             </div>
         )
     }
 }
-
-
-//onClick={() => this.props.nextStep(this.state.width_tiers1, this.state.height_tiers1)}
