@@ -14,15 +14,11 @@ export class Home extends React.Component {
             color_cake: '#520599',
             class: 'cream',
             elDecor: {},
-            allDecor: [{src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8GaBDcMqURldUayY4k_2ETMtJbkb3POgNu8likh-eg-DuwNmH',
-        x: 0, y: 0},
-        {src: 'http://magicake.ru/wp-content/uploads/2018/02/JZlA5flvgR0.jpg',
-        x: 20, y: 20},
-        {src: 'http://magicake.ru/wp-content/uploads/2018/02/dcC1HjVRAJE.jpg',
-        x: 40, y: 40}],
+            allDecor: [],
         }
         this.allDecor = this.allDecor.bind(this);
-
+        this.setCoord = this.setCoord.bind(this);
+        this.removeIMG = this.removeIMG.bind(this);
     }
 
    
@@ -54,10 +50,11 @@ export class Home extends React.Component {
     }
 
     addElement (value) {
+        console.warn(value);
         this.setState ({elDecor: value});
-        this.allDecor();
-        console.log(this.state.elDecor);
-        this.setState ({elDecor: {}});
+        // this.allDecor();
+        // console.log(this.state.elDecor);
+        // this.setState ({elDecor: {}});
             }
 
     allDecor () {
@@ -66,22 +63,54 @@ export class Home extends React.Component {
         this.setState({allDecor: all});
     }
 
+    setCoord (e) {
+        const newDecor = {
+            src: this.state.elDecor.src,
+            x: e.pageX,
+            y: e.pageY,
+        };
+
+        this.setState({
+            elDecor: newDecor,
+            allDecor: [...this.state.allDecor, newDecor]
+        });
+   console.log(this.state.elDecor, this.state.allDecor);
+
+    }
+
+    removeIMG (item) {
+        let x = item.x;
+            let y = item.y;
+        const all = this.state.allDecor;
+        for (let i=0; i<all.length; i+=1) {
+            if (all[i].x === x && all[i].y === y) {
+                all.splice(i, 1);
+                console.log(all[i]);
+            }
+        }
+        this.setState ({allDecor: all});
+        console.log(this.state.allDecor);
+    }
 
 
     render() {
         let all = this.state.allDecor.map((item, index) => {
-            return (<div key={index}><img src={item.src}
-            style={{position: 'absolute', top: `${item.y}px`,
-        left: `${item.x}px`, width: '10%'}}></img></div>)
+            return (<div key={index}>
+                    <img src={item.src}
+                        onContextMenu={this.removeIMG}
+                        style={{position: 'absolute', top: `${item.y}px`,
+                        left: `${item.x}px`, width: '10%'}}
+                    ></img>
+                    </div>)
         })
         return (
             <div id='wrapper'>
                 <div id='home'>
-                <div id='cake_place'>
-                 {/*  {all} */}
-                    <img src={this.state.elDecor.src} 
+                <div id='cake_place' onClick = {this.setCoord}>
+                  {all}
+                    {/* <img src={this.state.elDecor.src} 
                     style={{display: 'absolute', top: '30px', 
-                    left: '25px', width: '10%'}}></img>
+                    left: '25px', width: '10%'}}></img> */}
 
                    <div className = {this.state.class} 
                     style={{ width: `${this.state.width_tiers[2] * 5}px`, 
@@ -102,9 +131,21 @@ export class Home extends React.Component {
                 </div>
 
                 <nav>
-                <button className='nav_button' onClick={() => this.setState({ show_page: 'tiers' })}>Ярусы торта</button>
-                <button className='nav_button' onClick={() => this.setState({ show_page: 'frost_cake' })}>Покрытие торта</button>
-                <button className='nav_button' onClick={() => this.setState({ show_page: 'cake_decorating' })}>Украшение торта</button>
+                <button 
+                    className='nav_button' 
+                    onClick={() => this.setState({ show_page: 'tiers' })}>
+                    Ярусы торта
+                </button>
+                <button 
+                    className='nav_button' 
+                    onClick={() => this.setState({ show_page: 'frost_cake' })}>
+                    Покрытие торта
+                </button>
+                <button 
+                    className='nav_button' 
+                    onClick={() => this.setState({ show_page: 'cake_decorating' })}>
+                    Украшение торта
+                </button>
                 </nav>
 
                 <this.Page step={this.state.show_page} 
