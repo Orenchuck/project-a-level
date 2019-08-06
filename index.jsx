@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Tiers from './tiers';
 import FrostCake from './frost_cake';
-import CakeDecorating from './cake_decorating';
+import CakeDecorating from './cake_decorating2';
+import Draggable from 'react-draggable';
 
 export class Home extends React.Component {
     constructor() {
@@ -68,6 +69,7 @@ export class Home extends React.Component {
             src: this.state.elDecor.src,
             x: e.pageX,
             y: e.pageY,
+            width: this.state.elDecor.width,
         };
 
         this.setState({
@@ -97,9 +99,9 @@ export class Home extends React.Component {
         let all = this.state.allDecor.map((item, index) => {
             return (<div key={index}>
                     <img src={item.src}
-                        onContextMenu={this.removeIMG}
+                        onContextMenu={this.removeIMG.bind(this, item)}
                         style={{position: 'absolute', top: `${item.y}px`,
-                        left: `${item.x}px`, width: '10%'}}
+                        left: `${item.x}px`, width: `${this.state.elDecor.width}`}}
                     ></img>
                     </div>)
         })
