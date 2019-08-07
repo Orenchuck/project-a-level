@@ -58,6 +58,9 @@ export class Home extends React.Component {
     addElement(value) {
         console.warn(value);
         this.setState({ elDecor: value });
+        // this.allDecor();
+        // console.log(this.state.elDecor);
+        // this.setState ({elDecor: {}});
     }
 
     allDecor() {
@@ -196,6 +199,7 @@ export class Home extends React.Component {
                     addElement={(this.addElement.bind(this))}
                     arr={[{}, {}]} ></this.Page>
 
+                {/* {this.state.elDecor ? <Cookie_el addElement={this.addElement}/> : null} */}
             </div>
         )
     }

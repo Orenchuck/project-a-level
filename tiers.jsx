@@ -65,7 +65,7 @@ export default class Tiers extends React.Component {
                     <div className='headline'>Первый ярус</div>
 
                    <div className='group'>{/*Ширина яруса*/}
-                       <input type='number' min='10'
+                       <input type='number' min='10' max='50'
                               value={this.state.width_tiers1} 
                               onChange={this.ChangeWidthTiers1} 
                               required>
@@ -75,7 +75,7 @@ export default class Tiers extends React.Component {
                     </div>
 
                     <div className='group'>{/*Высота яруса*/}
-                        <input type='number' min='3'
+                        <input type='number' min='3' max='25'
                                value={this.state.height_tiers1} 
                                onChange={this.ChangeHeightTiers1} 
                                required>
@@ -89,7 +89,7 @@ export default class Tiers extends React.Component {
 
                     <div className='headline'>Второй ярус</div>
                     <div className='group'>{/*Ширина яруса*/}
-                        <input type='number' min='10'
+                        <input type='number' min='10' max='45'
                                value={this.state.width_tiers2} 
                                onChange={this.ChangeWidthTiers2}>
                         </input>
@@ -98,7 +98,7 @@ export default class Tiers extends React.Component {
                     </div>
 
                     <div className='group'>{/*Высота яруса*/}
-                        <input type='number' min='3'
+                        <input type='number' min='3' max='25'
                                value={this.state.height_tiers2} 
                                onChange={this.ChangeHeightTiers2}>
                         </input>
@@ -111,7 +111,7 @@ export default class Tiers extends React.Component {
                 <div >
                 <div className='headline'>Третий ярус</div>
                 <div className='group'>{/*Ширина яруса*/}
-                    <input type='number' min='10'
+                    <input type='number' min='10' max='40'
                            value={this.state.width_tiers3} 
                            onChange={this.ChangeWidthTiers3}>
                     </input>
@@ -119,7 +119,7 @@ export default class Tiers extends React.Component {
                     <label className='size'>Ширина яруса</label>
                 </div>
                 <div className='group'>{/*Высота яруса*/}
-                    <input type='number' min='3'
+                    <input type='number' min='3' max='25'
                             value={this.state.height_tiers3} 
                             onChange={this.ChangeHeightTiers3}>
                     </input>
