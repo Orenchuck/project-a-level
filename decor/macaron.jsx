@@ -11,7 +11,6 @@ export default class Macaron_el extends React.Component {
         this.onClick = this.onClick.bind(this);
         this.onChange = this.onChange.bind(this);
         this.whatPicture = this.whatPicture.bind(this);
-        this.d = this.d.bind(this);
     }
 
     onClick () {
@@ -26,11 +25,8 @@ export default class Macaron_el extends React.Component {
         this.setState({elDecor:{src: event.target.src,
         x: 0, y: 0}});
         console.log(this.state.elDecor);
-    }
-
-    d(e) {
-        this.whatPicture(e);
         this.props.add(this.state.elDecor);
+        
     }
 
     render () {
@@ -40,18 +36,24 @@ export default class Macaron_el extends React.Component {
                     <img src='http://www.pngall.com/wp-content/uploads/2/Macaron-PNG-Free-Image.png'
                  style={{width: '10vh'}}
                 // onClick = {() => {this.props.add(this.state.elDecor)}}
-                onClick = {this.d}
+                // onClick = {this.d}
+                onClick = {this.whatPicture}
                 >
                 </img>
                 <img src='https://www.stickpng.com/assets/thumbs/586ab2361fdce414493f510c.png'
                  style={{width: '10vh'}}
                 // onClick = {() => {this.props.add(this.state.elDecor)}}
-                onClick = {this.d}
+                onClick = {this.whatPicture}
                 ></img>
 
-                <img src='https://library.kissclipart.com/20180914/zie/kissclipart-macaron-transparent-background-clipart-french-cuis-e46c9087ba4c9a1b.png'
+                <img src='https://butik-tortiana.ru/upload/iblock/d9d/d9db8a6327e264163c5d68bd86c8542a.png'
                  style={{width: '10vh'}}
-                onClick = {() => {this.props.add(this.state.elDecor)}}></img>
+                onClick = {this.whatPicture}></img>
+                
+                <img src='http://pngimg.com/uploads/macaron/macaron_PNG105.png'
+                 style={{width: '10vh'}}
+                onClick = {this.whatPicture}></img>
+
                 <br/>
                 {/* <label> Если хотите добавить свое подготовленное изображение
                      - вставьте на него ссылку

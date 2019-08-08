@@ -73,7 +73,7 @@ export default class CakeDecorating extends React.Component {
                                 <input type="radio"></input>
                                 Добавить пряник
                             </label>
-                            <button className='destroy'>x</button>
+                            {/* <button className='destroy'>x</button> */}
                         </div>
                     
                 </li>
@@ -83,7 +83,7 @@ export default class CakeDecorating extends React.Component {
                             <input type="radio"></input>
                             Добавить леденец
                         </label>
-                        <button className='destroy'>x</button>
+                        {/* <button className='destroy'>x</button> */}
                     </div>
                 </li>
                 <li>
@@ -92,7 +92,7 @@ export default class CakeDecorating extends React.Component {
                             <input type="radio"></input>
                             Добавить фигурку из мастики
                         </label>
-                        <button className='destroy'>x</button>   
+                        {/* <button className='destroy'>x</button>    */}
                     </div>
                 </li>
                 <li>
@@ -101,7 +101,7 @@ export default class CakeDecorating extends React.Component {
                             <input type="radio"></input>
                             Добавить цветок
                         </label>  
-                        <button className='destroy'>x</button>
+                        {/* <button className='destroy'>x</button> */}
                     </div>
                     
                 </li>
@@ -111,7 +111,7 @@ export default class CakeDecorating extends React.Component {
                             <input type="radio"></input>
                             Добавить макарон
                         </label>
-                        <button className='destroy'>x</button>
+                        {/* <button className='destroy'>x</button> */}
                     </div>
                     
                 </li>
@@ -121,7 +121,7 @@ export default class CakeDecorating extends React.Component {
                             <input type="radio"></input>
                             Добавить фрукт или ягоду
                         </label>
-                        <button className='destroy'>x</button>
+                        {/* <button className='destroy'>x</button> */}
                     </div>
                     
                 </li>
