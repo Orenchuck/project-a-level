@@ -3,8 +3,10 @@ body{
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    display: flex;
+    display: block;
     position: relative;
+    background-image: url('src/bg.png');
+    background-size: cover;
 }
 
 #root{
@@ -12,14 +14,14 @@ body{
 }
 
 #wrapper{
-    width: 768px;
+    width: 100%;
     margin: auto;
-    border: 1px solid #520599;
-    background-image: url('src/bg.png');
+    /*border: 1px solid #520599;*/
 }
 
  /* CAKE PLACE ===========*/
 #home{
+    height: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +32,8 @@ body{
     width: 70%;
     margin: auto;
     height: 300px;
-    border: 3px solid green;
+    border: 3px dotted rgb(231, 190, 204);
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -57,7 +60,6 @@ nav{
     color: #F3E6ED;
     width: 33%;
     border: none;
-    /*height: 6vh;*/
     font-weight: bold;
     outline-color: none;
 }
@@ -73,7 +75,7 @@ nav{
 }
 
 #options{
-    width: 753px;
+    width: 100%;
     font-size: 14px;
     line-height: 4vh;
     padding: 15px 0px 0px 15px; 
@@ -171,7 +173,7 @@ button{
     background-color: #8A275C;
     color: #F3E6ED;
     width: 33.3%;
-    height: 4vh;
+    height: 6vh;
     margin: 1px;
     border: none;
     font-weight: bold;
@@ -182,7 +184,7 @@ select{
     background-color: #8A275C;
     color: #F3E6ED;
     width: 33.3%;
-    height: 4vh;
+    height: 6vh;
     margin: 1px;
     border: none;
     font-weight: bold;
@@ -240,4 +242,54 @@ select{
         margin: auto;
         width: 768px;
     }
+}
+
+@media screen and (max-width:375px){
+    .wrapper{
+        width: 100%;
+    }
+    .nav_button{
+        width: 32%;
+    }
+}
+
+
+/* COVERING ============================*/
+
+.cream .fondant .icing .velour{
+    border-radius: 2em;
+}
+  
+/* CREAM ================================ */
+.cream{
+    background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(29,85,153,0) 26%, rgba(28,84,153,1) 52%, rgba(27,82,153,0) 78%, rgba(26,81,153,1) 99%, rgba(26,81,153,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(29,85,153,0) 26%,rgba(28,84,153,1) 52%,rgba(27,82,153,0) 78%,rgba(26,81,153,1) 99%,rgba(26,81,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(29,85,153,0) 26%,rgba(28,84,153,1) 52%,rgba(27,82,153,0) 78%,rgba(26,81,153,1) 99%,rgba(26,81,153,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#1a5199',GradientType=0 ); /* IE6-9 */
+}
+
+.icing{
+    background-image: url('./src/bubble.png');
+    background-size: cover;
+    width: 50%;
+    z-index: 1;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 25%;
+}
+
+.fondant{
+    opacity: .5;
+}
+
+.velour{
+    background-image: url('./src/grainyBG.png');
+    background-size: cover;
+    width: 50%;
+    z-index: 1;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 25%;
 }

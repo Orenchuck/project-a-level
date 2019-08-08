@@ -43,6 +43,7 @@ export class Home extends React.Component {
         StepFrostCake(value1, value2){
             this.setState({
                 color_cake: value1,
+                class_cake: value2,     //
             })
         }
     
@@ -82,7 +83,7 @@ export class Home extends React.Component {
             <div id='wrapper'>
                 <div id='home'>
                 <div id='cake_place'>
-                 {/*  {all} */}
+                    {/* {all} */}    
                     <img src={this.state.elDecor.src} 
                     style={{display: 'absolute', top: '30px', 
                     left: '25px', width: '10%'}}></img>

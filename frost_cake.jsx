@@ -8,11 +8,16 @@ export default class FrostCake extends React.Component {
 
         this.state = {
             color: '#520599',
+            class: '', //
         }
         this.ChangeColor = this.ChangeColor.bind(this);
+        this.handleChange = this.handleChange.bind(this);//
     }
     ChangeColor() {
         this.setState({ color: event.target.value })
+    }
+    handleChange() {                                   //
+        this.setState({ class: event.target.value})    //
     }
 
     render() {
@@ -35,7 +40,9 @@ export default class FrostCake extends React.Component {
                         <option className="velour" value="velour">Велюр</option>
                     </select>
                 </label>
-                <button onClick={() => this.props.StepFrostCake(this.state.color)}>Ок</button>
+                <button onClick={() => this.props.StepFrostCake(this.state.color,
+                                       this.props.StepFrostCake(this.state.class))  //
+                                }>Ок</button>
             </div>
         )
     }
