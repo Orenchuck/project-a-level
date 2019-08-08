@@ -20,7 +20,8 @@ export default class Tiers extends React.Component {
         this.ChangeWidthTiers3 = this.ChangeWidthTiers3.bind(this);
         this.ChangeHeightTiers3 = this.ChangeHeightTiers3.bind(this);
         this.ClickButton = this.ClickButton.bind(this);
-
+        this.ClickDel1 = this.ClickDel1.bind(this);
+        this.ClickDel2 = this.ClickDel2.bind(this);
         
         
     }
@@ -48,7 +49,13 @@ export default class Tiers extends React.Component {
         this.setState({ height_tiers3: event.target.value });
      }
 
-    
+     ClickDel1(){
+        this.setState({ width_tiers2: '', height_tiers2: ''})
+        }
+
+     ClickDel2(){
+        this.setState({ width_tiers3: '', height_tiers3: ''})
+        }
 
      ClickButton(){
          this.props.StepTiers(+this.state.width_tiers1, +this.state.height_tiers1, 
@@ -87,7 +94,7 @@ export default class Tiers extends React.Component {
 
                 <div >
 
-                    <div className='headline'>Второй ярус</div>
+                    <div className='headline'>Второй ярус <button className='ButDel' onClick={this.ClickDel1}>Удалить ярус</button></div>
                     <div className='group'>{/*Ширина яруса*/}
                         <input type='number' min='10' max='45'
                                value={this.state.width_tiers2} 
@@ -109,7 +116,7 @@ export default class Tiers extends React.Component {
                 </div>
 
                 <div >
-                <div className='headline'>Третий ярус</div>
+                <div className='headline'>Третий ярус <button className='ButDel' onClick={this.ClickDel2}>Удалить ярус</button></div>
                 <div className='group'>{/*Ширина яруса*/}
                     <input type='number' min='10' max='40'
                            value={this.state.width_tiers3} 
@@ -132,4 +139,4 @@ export default class Tiers extends React.Component {
         )
     }
 }
->>>>>>> 023f5b1f92d7a487fa2f463c8303d449a6652eb5
+//>>>>>>> 023f5b1f92d7a487fa2f463c8303d449a6652eb5

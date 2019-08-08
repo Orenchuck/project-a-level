@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 
 export default class FrostCake extends React.Component {
@@ -35,10 +34,10 @@ export default class FrostCake extends React.Component {
                 <label>
                     <p className='headline'>Выберите покрытие торта:</p> 
                     <select value={this.state.value} onChange={this.handleChange}>
-                        <option className='cream' value="cream">Крем</option>
-                        <option className="fondant" value="fondant">Мастика</option>
-                        <option className="icing" value="icing">Зеркальная глазурь</option>
-                        <option className="velour" value="velour">Велюр</option>
+                        <option  value="cream">Крем</option>
+                        <option  value="fondant">Мастика</option>
+                        <option value="icing">Зеркальная глазурь</option>
+                        <option  value="velour">Велюр</option>
                     </select>
                 </label>
                 <button onClick={() => this.props.StepFrostCake(this.state.color, this.state.value)}>Применить</button>
@@ -46,4 +45,4 @@ export default class FrostCake extends React.Component {
         )
     }
 
-
+}

@@ -34,6 +34,8 @@ export class Home extends React.Component {
                 width_tiers: [value1, value3, value5],
                 height_tiers: [value2, value4, value6]
             })
+        }else{
+            alert('Торт слишком большой! Введите значение меньше')
         }
     }
 
