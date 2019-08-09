@@ -158,21 +158,43 @@ export class Home extends React.Component {
                                 width: `${this.state.width_tiers[2] * 5}px`,
                                 height: `${this.state.height_tiers[2] * 5}px`,
                                 background: this.state.color_cake
+                            }}
+                        > 
+                            <div  className={this.state.class} 
+                            style={{
+                                width: `${this.state.width_tiers[2] * 5}px`,
+                                height: `${this.state.height_tiers[2] * 5}px`
                             }}></div>
+                            </div>
 
-                        <div className={this.state.class}
+
+                            <div className={this.state.class} 
                             style={{
                                 width: `${this.state.width_tiers[1] * 5}px`,
                                 height: `${this.state.height_tiers[1] * 5}px`,
                                 background: this.state.color_cake
+                            }}>
+                        <div  className={this.state.class} 
+                            style={{
+                                width: `${this.state.width_tiers[1] * 5}px`,
+                                height: `${this.state.height_tiers[1] * 5}px`
                             }}></div>
+                        </div>
 
                         <div className={this.state.class}
+                         style={{
+                            width: `${this.state.width_tiers[0] * 5}px`,
+                            height: `${this.state.height_tiers[0] * 5}px`,
+                            background: this.state.color_cake
+                        }}
+                        >
+                        <div  className={this.state.class} 
                             style={{
                                 width: `${this.state.width_tiers[0] * 5}px`,
                                 height: `${this.state.height_tiers[0] * 5}px`,
-                                background: this.state.color_cake
                             }}></div>
+                        </div>
+
 
                     </div>
                 </div>

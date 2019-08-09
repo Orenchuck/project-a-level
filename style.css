@@ -37,6 +37,7 @@ body{
     justify-content: flex-end;
     align-items: center;
     padding: 20px 10px 100px 10px;
+    position: relative;
 }
 
 #decor_list {
@@ -241,40 +242,45 @@ select{
 /* COVERING ============================*/
 
 .cream, .fondant, .icing, .velour{
-    border-radius: 2em;
+    border-radius: 10px 10px 0 0;
     max-width: 100%;
 }
   
 /* CREAM ================================ */
 .cream{
-    background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(29,85,153,0) 26%, rgba(28,84,153,1) 52%, rgba(27,82,153,0) 78%, rgba(26,81,153,1) 99%, rgba(26,81,153,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(29,85,153,0) 26%,rgba(28,84,153,1) 52%,rgba(27,82,153,0) 78%,rgba(26,81,153,1) 99%,rgba(26,81,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(29,85,153,0) 26%,rgba(28,84,153,1) 52%,rgba(27,82,153,0) 78%,rgba(26,81,153,1) 99%,rgba(26,81,153,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#1a5199',GradientType=0 ); /* IE6-9 */
+    background-image: linear-gradient(to bottom, 
+    rgba(255, 255, 255, 0),  #b6b6b67c, 
+    rgba(255, 255, 255, 0),  #b6b6b67c, 
+    rgba(255, 255, 255, 0), #b6b6b67c, 
+    rgba(255, 255, 255, 0), #b6b6b67c, 
+    rgba(255, 255, 255, 0), #b6b6b67c, 
+    rgba(255, 255, 255, 0), #b6b6b67c, 
+    rgba(255, 255, 255, 0));
+    background-blend-mode: soft-light;
+
 }
 
 .icing{
-    background-image: url('./src/bubble.png');
+    background-image: url('src/bubble.png');
     background-size: cover;
     width: 50%;
     z-index: 1;
     display: block;
-    position: absolute;
     top: 0;
     left: 25%;
 }
 
 .fondant{
     opacity: .5;
+    border: 1px solid #88888888;
 }
 
 .velour{
-    background-image: url('./src/grainyBG.png');
+    background-image: url('src/grainyBG.png');
     background-size: cover;
     width: 50%;
     z-index: 1;
     display: block;
-    position: absolute;
     top: 0;
     left: 25%;
 }
@@ -282,8 +288,8 @@ select{
 @media (max-width: 630px){
     nav {
         display: flex;
-    flex-direction: column;
-    align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
     
     .nav_button{
