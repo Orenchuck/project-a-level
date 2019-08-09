@@ -10,8 +10,8 @@ export class Home extends React.Component {
         super();
         this.state = {
             show_page: 'tiers',
-            width_tiers: [30, 0, 0],
-            height_tiers: [10, 0, 0],
+            width_tiers: [30, 0, 0, 0, 0],
+            height_tiers: [10, 0, 0, 0, 0],
             color_cake: '#520599',
             class: 'cream',
             elDecor: {},
@@ -28,11 +28,13 @@ export class Home extends React.Component {
 
 
 
-    StepTiers(value1, value2, value3, value4, value5, value6) {
-        if (value1 < 115 && value2 < 115 && value3 < 115 && value4 < 115 && value5 < 115 && value6 < 115) {
+    StepTiers(value1, value2, value3, value4, value5, value6, value7, value8, value9, value10 ) {
+
+        if (value1 < 115 && value2 < 115 && value3 < 115 && value4 < 115 && value5 < 115 && value6 < 115 &&
+            value7 < 115 && value8 < 115 && value9 < 115 && value10 < 115) {
             this.setState({
-                width_tiers: [value1, value3, value5],
-                height_tiers: [value2, value4, value6]
+                width_tiers: [value1, value3, value5, value7, value9],
+                height_tiers: [value2, value4, value6, value8, value10]
             })
         }else{
             alert('Торт слишком большой! Введите значение меньше')
@@ -153,51 +155,78 @@ export class Home extends React.Component {
                     <div id='cake_place' onClick={this.state.moving ? undefined : this.setCoord}>
                         {all}
 
+                        <div className={this.state.class} 
+                    style={{
+                        width: `${this.state.width_tiers[4] * 5}px`,
+                        height: `${this.state.height_tiers[4] * 5}px`,
+                        background: this.state.color_cake
+                    }}>
                         <div className={this.state.class}
                             style={{
+                                width: `${this.state.width_tiers[4] * 5}px`,
+                                height: `${this.state.height_tiers[4] * 5}px`
+                            }}></div>
+                            </div>
+
+                            <div className={this.state.class} 
+                            style={{
+                                width: `${this.state.width_tiers[3] * 5}px`,
+                                height: `${this.state.height_tiers[3] * 5}px`,
+                                background: this.state.color_cake
+                            }}>
+                        <div className={this.state.class}
+                            style={{
+                                width: `${this.state.width_tiers[3] * 5}px`,
+                                height: `${this.state.height_tiers[3] * 5}px`
+                            }}></div>
+                        </div>
+
+                        <div  className={this.state.class}
+                        style={{
                                 width: `${this.state.width_tiers[2] * 5}px`,
                                 height: `${this.state.height_tiers[2] * 5}px`,
                                 background: this.state.color_cake
-                            }}
-                        > 
-                            <div  className={this.state.class} 
+                            }}>
+                        <div className={this.state.class}
                             style={{
                                 width: `${this.state.width_tiers[2] * 5}px`,
                                 height: `${this.state.height_tiers[2] * 5}px`
                             }}></div>
                             </div>
 
-
-                            <div className={this.state.class} 
-                            style={{
+                            <div className={this.state.class} style={{
                                 width: `${this.state.width_tiers[1] * 5}px`,
                                 height: `${this.state.height_tiers[1] * 5}px`,
                                 background: this.state.color_cake
                             }}>
-                        <div  className={this.state.class} 
+                        <div className={this.state.class}
                             style={{
                                 width: `${this.state.width_tiers[1] * 5}px`,
                                 height: `${this.state.height_tiers[1] * 5}px`
                             }}></div>
-                        </div>
+                                </div> 
 
-                        <div className={this.state.class}
-                         style={{
-                            width: `${this.state.width_tiers[0] * 5}px`,
-                            height: `${this.state.height_tiers[0] * 5}px`,
-                            background: this.state.color_cake
-                        }}
-                        >
-                        <div  className={this.state.class} 
+                            <div  className={this.state.class}
                             style={{
                                 width: `${this.state.width_tiers[0] * 5}px`,
                                 height: `${this.state.height_tiers[0] * 5}px`,
+                                background: this.state.color_cake
+                            }}>
+                        <div className={this.state.class}
+                            style={{
+                                width: `${this.state.width_tiers[0] * 5}px`,
+                                height: `${this.state.height_tiers[0] * 5}px`
                             }}></div>
-                        </div>
-
+                            </div>
 
                     </div>
                 </div>
+
+                <this.Page step={this.state.show_page}
+                    handler={(this.StepTiers.bind(this))}
+                    handler1={(this.StepFrostCake.bind(this))}
+                    addElement={(this.addElement.bind(this))}
+                    arr={[{}, {}]} ></this.Page>
 
                 <nav>
                     <button
@@ -217,11 +246,6 @@ export class Home extends React.Component {
                 </button>
                 </nav>
 
-                <this.Page step={this.state.show_page}
-                    handler={(this.StepTiers.bind(this))}
-                    handler1={(this.StepFrostCake.bind(this))}
-                    addElement={(this.addElement.bind(this))}
-                    arr={[{}, {}]} ></this.Page>
 
                 {/* {this.state.elDecor ? <Cookie_el addElement={this.addElement}/> : null} */}
             </div>
