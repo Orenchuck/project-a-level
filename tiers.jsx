@@ -146,7 +146,7 @@ export default class Tiers extends React.Component {
                               required>
                         </input>
                         <span className='bar'></span>
-                        <label className='size'>Ширина яруса</label>
+                        <label className='size'>Ширина яруса, см</label>
                     </div>
 
                     <div className='group'>{/*Высота яруса*/}
@@ -156,7 +156,7 @@ export default class Tiers extends React.Component {
                                required>
                         </input>
                         <span className='bar'></span>
-                        <label className='size'>Высота яруса</label>
+                        <label className='size'>Высота яруса, см</label>
                     </div>
                     <button style ={{ display: this.state.buttAdd2}} onClick={this.ButtonAddTier2}>Добавить ярус</button>
                 </div>
@@ -170,7 +170,7 @@ export default class Tiers extends React.Component {
                                onChange={this.ChangeWidthTiers2}>
                         </input>
                         <span className='bar'></span>
-                        <label className='size'>Ширина яруса</label>
+                        <label className='size'>Ширина яруса, см</label>
                     </div>
 
                     <div className='group'>{/*Высота яруса*/}
@@ -179,7 +179,7 @@ export default class Tiers extends React.Component {
                                onChange={this.ChangeHeightTiers2}>
                         </input>
                         <span className='bar'></span>
-                        <label className='size'>Высота яруса</label>
+                        <label className='size'>Высота яруса, см</label>
                     </div>
                     <button style ={{ display: this.state.buttAdd3}} onClick={this.ButtonAddTier3}>Добавить ярус</button>
                 </div>
@@ -192,7 +192,7 @@ export default class Tiers extends React.Component {
                            onChange={this.ChangeWidthTiers3}>
                     </input>
                     <span className='bar'></span>
-                    <label className='size'>Ширина яруса</label>
+                    <label className='size'>Ширина яруса, см</label>
                 </div>
                 <div className='group'>{/*Высота яруса*/}
                     <input type='number' min='3' max='25'
@@ -200,7 +200,7 @@ export default class Tiers extends React.Component {
                             onChange={this.ChangeHeightTiers3}>
                     </input>
                     <span className='bar'></span>
-                    <label className='size'>Высота яруса</label>
+                    <label className='size'>Высота яруса, см</label>
                 </div>
                  <button style ={{ display: this.state.buttAdd4}} onClick={this.ButtonAddTier4}>Добавить ярус</button>
                 </div>
@@ -213,7 +213,7 @@ export default class Tiers extends React.Component {
                            onChange={this.ChangeWidthTiers4}>
                     </input>
                     <span className='bar'></span>
-                    <label className='size'>Ширина яруса</label>
+                    <label className='size'>Ширина яруса, см</label>
                 </div>
                 <div className='group'>{/*Высота яруса*/}
                     <input type='number' min='3' max='25'
@@ -221,7 +221,7 @@ export default class Tiers extends React.Component {
                             onChange={this.ChangeHeightTiers4}>
                     </input>
                     <span className='bar'></span>
-                    <label className='size'>Высота яруса</label>
+                    <label className='size'>Высота яруса, см</label>
                 </div>
                 <button style ={{ display: this.state.buttAdd5}} onClick={this.ButtonAddTier5}>Добавить ярус</button>
                 </div>
@@ -234,7 +234,7 @@ export default class Tiers extends React.Component {
                            onChange={this.ChangeWidthTiers5}>
                     </input>
                     <span className='bar'></span>
-                    <label className='size'>Ширина яруса</label>
+                    <label className='size'>Ширина яруса, см</label>
                 </div>
                 <div className='group'>{/*Высота яруса*/}
                     <input type='number' min='3' max='25'
@@ -242,7 +242,7 @@ export default class Tiers extends React.Component {
                             onChange={this.ChangeHeightTiers5}>
                     </input>
                     <span className='bar'></span>
-                    <label className='size'>Высота яруса</label>
+                    <label className='size'>Высота яруса, см</label>
                 </div>
                 </div>
 
@@ -252,4 +252,4 @@ export default class Tiers extends React.Component {
         )
     }
 }
-//>>>>>>> 023f5b1f92d7a487fa2f463c8303d449a6652eb5
+
