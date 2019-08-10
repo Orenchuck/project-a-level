@@ -423,14 +423,14 @@ export default class CakeDecorating extends React.Component {
         console.log(this.state.decor_type);
         if (this.state.decor_type === 0) {
             return (
-                <div>
+                <div id="options">
                     {this.list()}
                 </div>
             );
         }
 
         return (
-            <div>
+            <div id="options">
                 {this.what_decor(this.state.decor_type)}
                 <br />
                 <button onClick={() => this.setState({ decor_type: 0 })}>Back</button>

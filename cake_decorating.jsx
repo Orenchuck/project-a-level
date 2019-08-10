@@ -65,7 +65,7 @@ export default class CakeDecorating extends React.Component {
 
     render() {
         return (
-            <div>
+            <div >
                 {this.state.all_list ? (<ul id='decor_list'>
                     <li>
                         <div onClick = {this.cookie}>
