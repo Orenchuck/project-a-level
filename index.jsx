@@ -34,14 +34,14 @@ export class Home extends React.Component {
 
     StepTiers(value1, value2, value3, value4, value5, value6, value7, value8, value9, value10) {
 
-        if (value1 < 115 && value2 < 115 && value3 < 115 && value4 < 115 && value5 < 115 && value6 < 115 &&
-            value7 < 115 && value8 < 115 && value9 < 115 && value10 < 115) {
+        if (value1 < 60 && value2 < 25 && value3 < 45 && value4 < 25 && value5 < 40 && value6 < 25 &&
+            value7 < 35 && value8 < 25 && value9 < 30 && value10 < 25) {
             this.setState({
                 width_tiers: [value1, value3, value5, value7, value9],
                 height_tiers: [value2, value4, value6, value8, value10]
             })
         } else {
-            alert('Торт слишком большой! Введите значение меньше')
+            alert('Торт слишком большой! Введите значения меньше')
         }
     }
 

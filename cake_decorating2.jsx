@@ -5,7 +5,6 @@ import img3 from './src/cookies/3.png';
 import img4 from './src/cookies/4.png';
 import img5 from './src/cookies/5.png';
 import img6 from './src/cookies/6.png';
-import img7 from './src/cookies/7.png';
 import img8 from './src/cookies/8.png';
 import img9 from './src/cookies/9.png';
 import img10 from './src/cookies/10.png';
@@ -31,6 +30,73 @@ import img29 from './src/9.png';
 import img30 from './src/10.png';
 import img31 from './src/11.png';
 import img32 from './src/12.png';
+import img33 from './src/13.png';
+import img34 from './src/14.png';
+import img35 from './src/15.png';
+import img36 from './src/16.png';
+import img37 from './src/17.png';
+import img38 from './src/18.png';
+import img39 from './src/19.png';
+import img40 from './src/20.png';
+import img41 from './src/21.png';
+import img42 from './src/22.png';
+import img43 from './src/23.png';
+import img44 from './src/24.png';
+import img45 from './src/25.png';
+import img46 from './src/26.png';
+import img47 from './src/27.png';
+import img48 from './src/28.png';
+import img49 from './src/29.png';
+import img50 from './src/30.png';
+import img51 from './src/31.png';
+import img52 from './src/32.png';
+import img53 from './src/33.png';
+import img54 from './src/34.png';
+import img55 from './src/35.png';
+import img56 from './src/36.png';
+import img58 from './src/38.png';
+import img59 from './src/39.png';
+import img60 from './src/40.png';
+import img61 from './src/41.png';
+import img62 from './src/42.png';
+import img63 from './src/43.png';
+import img64 from './src/44.png';
+import img65 from './src/45.png';
+import img66 from './src/46.png';
+import img67 from './src/47.png';
+import img68 from './src/48.png';
+import img69 from './src/49.png';
+import img70 from './src/50.png';
+import img71 from './src/51.png';
+import img72 from './src/52.png';
+import img73 from './src/53.png';
+import img74 from './src/54.png';
+import img75 from './src/55.png';
+import img76 from './src/56.png';
+import img77 from './src/57.png';
+import img78 from './src/58.png';
+import img79 from './src/59.png';
+import img80 from './src/60.png';
+import img82 from './src/62.png';
+import img83 from './src/63.png';
+import img84 from './src/64.png';
+import img85 from './src/65.png';
+import img86 from './src/66.png';
+import img87 from './src/67.png';
+import img88 from './src/68.png';
+import img89 from './src/69.png';
+import img90 from './src/70.png';
+import img91 from './src/71.png';
+import img92 from './src/72.png';
+import img93 from './src/73.png';
+import img94 from './src/74.png';
+import img95 from './src/75.png';
+import img96 from './src/76.png';
+import img97 from './src/77.png';
+import img98 from './src/78.png';
+import img100 from './src/80.png';
+import img101 from './src/81.png';
+
 
 
 
@@ -164,11 +230,11 @@ export default class CakeDecorating extends React.Component {
                         width: '52px'
                     },
                     {
-                        url: 'https://avatanplus.com/files/resources/mid/58582ff33c500159187b4e2f.png',
+                        url: img33,
                         width: '40px'
                     },
                     {
-                        url: 'https://purepng.com/public/uploads/large/lollipop-candy-wnm.png',
+                        url: img34,
                         width: '40px'
                     },
 
@@ -178,80 +244,124 @@ export default class CakeDecorating extends React.Component {
                     id: 3,
                     text: 'Добавить цветок',
                     img: [{
-                        url: 'https://avatanplus.com/files/resources/original/5ad797000f334162da25d83e.png',
+                        url: img35,
                         width: '65px'
                     },
                     {
-                        url: 'http://dgdesign.ru/uploads/posts/2018-07/1532701408_546573243.png',
+                        url: img36,
                         width: '40px'
                     },
                     {
-                        url: 'https://cdn.pixabay.com/photo/2017/09/01/08/45/peony-2703458_960_720.png',
+                        url: img37,
                         width: '40px'
                     },
                     {
-                        url: 'http://galerey-room.ru/images/0_3d5b1_5d7631f_orig.png',
+                        url: img38,
                         width: '30px'
                     },
                     {
-                        url: 'https://clipart-db.ru/file_content/rastr/flower-027.png',
+                        url: img39,
                         width: '40px'
                     },
                     {
-                        url: 'https://cdn.pixabay.com/photo/2017/11/26/23/07/flower-2980200_960_720.png',
+                        url: img40,
                         width: '40px'
                     },
                     {
-                        url: 'http://www.playcast.ru/uploads/2017/04/25/22420556.png',
+                        url: img41,
                         width: '40px'
                     },
                     {
-                        url: 'https://img0.liveinternet.ru/images/attach/c/3/77/999/77999486_0_107a8_aa17910f_XL.png',
+                        url: img42,
                         width: '40px'
                     },
                     {
-                        url: 'http://kira-scrap.ru/KATALOG/ZVETY/3/0_8bddc_b7c623aa_M.png',
+                        url: img43,
                         width: '30px'
                     },
                     {
-                        url: 'https://topflo.ru/pc/article_pic/p_sini_tsvetok.png?1334056196',
+                        url: img44,
                         width: '30px'
                     },
                     {
-                        url: 'https://img-fotki.yandex.ru/get/6444/65387414.13f/0_c9382_9ac7e1b3_orig.png',
+                        url: img45,
                         width: '40px'
                     },
                     {
-                        url: 'http://www.playcast.ru/uploads/2015/02/06/11983069.png',
+                        url: img46,
                         width: '35px'
                     },
                     {
-                        url: 'https://img-fotki.yandex.ru/get/6521/102699435.c19/0_fda53_3b34d1fe_orig',
+                        url: img47,
                         width: '30px'
                     },
                     {
-                        url: 'https://i.pinimg.com/originals/3b/50/aa/3b50aa5e4c54acc14e5cddcc6caf768e.png',
+                        url: img48,
                         width: '40px'
                     },
                     {
-                        url: 'https://clipart-db.ru/file_content/rastr/flower_065.png',
+                        url: img49,
                         width: '40px'
                     },
                     {
-                        url: 'http://kira-scrap.ru/KATALOG/RAZNOE/2/0_149c13_81bf1fe7_M.png',
+                        url: img50,
                         width: '30px'
                     },
                     {
-                        url: 'http://img.lenagold.ru/r/roza/bel/bel_roza016.png',
+                        url: img51,
                         width: '40px'
                     },
                     {
-                        url: 'http://dgdesign.ru/uploads/posts/2018-03/1522065435_zelenye-listya-8724311.png',
+                        url: img52,
                         width: '30px'
                     },
                     {
-                        url: 'http://dgdesign.ru/uploads/posts/2018-03/1522063103_myata-na-prozrachnom-fone-43fd.png',
+                        url: img53,
                         width: '30px'
+                    },
+                    {
+                        url: img85,
+                        width: '42px'
+                    },
+                    {
+                        url: img86,
+                        width: '35px'
+                    },
+                    {
+                        url: img95,
+                        width: '52px'
+                    },
+                    {
+                        url: img87,
+                        width: '52px'
+                    },
+                    {
+                        url: img88,
+                        width: '40px'
+                    },
+                    {
+                        url: img89,
+                        width: '35px'
+                    },
+                    {
+                        url: img90,
+                        width: '52px'
+                    },
+                    {
+                        url: img91,
+                        width: '40px'
+                    },
+                    {
+                        url: img92,
+                        width: '52px'
+                    },
+                    {
+                        url: img93,
+                        width: '52px'
+                    },
+                    {
+                        url: img94,
+                        width: '52px'
                     },
                     ]
                 },
@@ -271,20 +381,52 @@ export default class CakeDecorating extends React.Component {
                         width: '45px'
                     },
                     {
-                        url: 'https://butik-tortiana.ru/upload/iblock/d9d/d9db8a6327e264163c5d68bd86c8542a.png',
+                        url: img54,
                         width: '45px'
                     },
                     {
-                        url: 'http://www.pngall.com/wp-content/uploads/2/Macaron-PNG-Free-Image.png',
+                        url: img55,
                         width: '30px'
                     },
                     {
-                        url: 'https://www.stickpng.com/assets/thumbs/586ab2361fdce414493f510c.png',
+                        url: img56,
                         width: '24px'
                     },
                     {
-                        url: 'http://pngimg.com/uploads/macaron/macaron_PNG105.png',
+                        url: img75,
+                        width: '35px'
+                    },
+                    {
+                        url: img76,
+                        width: '35px'
+                    },
+                    {
+                        url: img77,
+                        width: '40px'
+                    },
+                    {
+                        url: img78,
+                        width: '24px'
+                    },
+                    {
+                        url: img79,
                         width: '52px'
+                    },
+                    {
+                        url: img80,
+                        width: '52px'
+                    },
+                    {
+                        url: img82,
+                        width: '35px'
+                    },
+                    {
+                        url: img83,
+                        width: '24px'
+                    },
+                    {
+                        url: img84,
+                        width: '40px'
                     },
                     ]
                 },
@@ -292,72 +434,92 @@ export default class CakeDecorating extends React.Component {
                     id: 5,
                     text: 'Добавить ягоды',
                     img: [{
-                        url: 'http://dgdesign.ru/uploads/posts/2018-03/1522067166_malina-prozrachnyy-fon-55342s.png',
+                        url: img58,
                         width: '30px'
                     },
                     {
-                        url: 'https://images.ua.prom.st/384012376_w640_h640_letnyaya-malina.jpg',
+                        url: img59,
                         width: '30px'
                     },
                     {
-                        url: 'https://i.pinimg.com/originals/34/13/e5/3413e52c44c9b3cb85731ef0ccf1d8fb.png',
+                        url: img60,
                         width: '40px'
                     },
                     {
-                        url: 'http://www.byruss.com/upload/iblock/893/8933a2b5ba54aae64bbb7d36b5bf9c42.png',
+                        url: img61,
                         width: '40px'
                     },
                     {
-                        url: 'http://www.cocktailing.ru/img/u_ingredients/img_primary/ingredient_strawberry.png',
+                        url: img62,
                         width: '30px'
                     },
                     {
-                        url: 'http://dgdesign.ru/uploads/posts/2018-05/1527072841_klubnika-43688.png',
+                        url: img63,
                         width: '40px'
                     },
                     {
-                        url: 'http://dgdesign.ru/uploads/posts/2018-08/1533919444_kartinki-na-prozrachnom-fone-yagody-chernika-335417.png',
+                        url: img64,
                         width: '30px'
                     },
                     {
-                        url: 'http://pngimg.com/uploads/blueberries/blueberries_PNG33.png',
+                        url: img65,
                         width: '30px'
                     },
                     {
-                        url: 'http://parenie.com/wp-content/uploads/2016/02/ejevika.png',
+                        url: img66,
                         width: '30px'
                     },
                     {
-                        url: 'https://ogorodko.ru/wp-content/uploads/2017/08/%D0%95%D0%B6%D0%B5%D0%B2%D0%B8%D0%BA%D0%B0-%D1%81%D0%B0%D0%B4%D0%BE%D0%B2%D0%B0%D1%8F.png',
+                        url: img67,
                         width: '35px'
                     },
                     {
-                        url: 'http://www.ramki-photoshop.ru/eda/eda26.png',
+                        url: img68,
                         width: '24px'
                     },
                     {
-                        url: 'http://pngimg.com/uploads/raspberry/raspberry_PNG5064.png',
+                        url: img69,
                         width: '24px'
                     },
                     {
-                        url: 'https://img0.liveinternet.ru/images/attach/d/0/141/676/141676268_20.png',
+                        url: img70,
                         width: '30px'
                     },
                     {
-                        url: 'https://pngicon.ru/file/uploads/krasnaja-smorodina.png',
+                        url: img71,
                         width: '24px'
                     },
                     {
-                        url: 'http://kira-scrap.ru/KATALOG/EDA/1/0_8f762_29ea9fa8_M.png',
+                        url: img72,
                         width: '24px'
                     },
                     {
-                        url: 'https://cdn.pixabay.com/photo/2016/02/24/17/31/fruit-1220367__340.png',
+                        url: img73,
                         width: '40px'
                     },
                     {
-                        url: 'http://pngimg.com/uploads/cherry/cherry_PNG619.png',
+                        url: img74,
                         width: '30px'
+                    },
+                    {
+                        url: img96,
+                        width: '30px'
+                    },
+                    {
+                        url: img97,
+                        width: '35px'
+                    },
+                    {
+                        url: img98,
+                        width: '40px'
+                    },
+                    {
+                        url: img100,
+                        width: '24px'
+                    },
+                    {
+                        url: img101,
+                        width: '45px'
                     },
                     ]
                 }
@@ -383,10 +545,10 @@ export default class CakeDecorating extends React.Component {
         for (let i = 0; i < this.state.groups.length; i += 1) {
             if (this.state.groups[i].id === num) {
                 return this.state.groups[i].img.map((el, index) => (
-                    <img key={index} 
-                    src={el.url} 
-                    style={{ width: el.width }}
-                    onClick={this.whatPicture}></img>
+                    <img key={index}
+                        src={el.url}
+                        style={{ width: el.width }}
+                        onClick={this.whatPicture}></img>
                 ))
             }
         }
@@ -418,7 +580,7 @@ export default class CakeDecorating extends React.Component {
             <div id="options">
                 {this.what_decor(this.state.decor_type)}
                 <br />
-                <button onClick={() => this.setState({ decor_type: 0 })}>Back</button>
+                <button onClick={() => this.setState({ decor_type: 0 })}>Назад</button>
             </div>
         );
     }
