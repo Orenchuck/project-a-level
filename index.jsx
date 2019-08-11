@@ -290,6 +290,7 @@ export class Home extends React.Component {
                     <i className="fa fa-candy"></i>
                         {/* Украшение торта */}
                 </button>
+
                 </nav>
             </div>
         )
