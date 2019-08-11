@@ -232,18 +232,21 @@ export class Home extends React.Component {
                     <button
                         className='nav_button'
                         onClick={() => this.setState({ show_page: 'tiers' })}>
-                        Ярусы торта
-                </button>
+                            <i className='fa fa-cake'></i>
+                        {/* Ярусы торта */}
+                    </button>
                     <button
                         className='nav_button'
                         onClick={() => this.setState({ show_page: 'frost_cake' })}>
-                        Покрытие торта
-                </button>
+                            <i className="fa fa-spatula"></i>
+                        {/* Покрытие торта */}
+                    </button>
                     <button
                         className='nav_button'
                         onClick={() => this.setState({ show_page: 'cake_decorating' })}>
-                        Украшение торта
-                </button>
+                            <i className="fa fa-candy"></i>
+                        {/* Украшение торта */}
+                    </button>
                 </nav>
 
 
