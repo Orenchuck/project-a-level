@@ -4,10 +4,12 @@ import Tiers from './tiers';
 import FrostCake from './frost_cake';
 import CakeDecorating from './cake_decorating2';
 import Draggable from 'react-draggable';
+import domtoimage from 'dom-to-image';
 
 export class Home extends React.Component {
     constructor() {
         super();
+        localStorage.getItem('cake') ? this.state = JSON.parse(localStorage.getItem('cake')) : 
         this.state = {
             show_page: 'tiers',
             width_tiers: [30, 0, 0, 0, 0],
@@ -24,11 +26,12 @@ export class Home extends React.Component {
         this.handleDrag = this.handleDrag.bind(this);
         this.handleStart = this.handleStart.bind(this);
         this.handleStop = this.handleStop.bind(this);
+        this.savePicture = this.savePicture.bind(this);
     }
 
 
 
-    StepTiers(value1, value2, value3, value4, value5, value6, value7, value8, value9, value10 ) {
+    StepTiers(value1, value2, value3, value4, value5, value6, value7, value8, value9, value10) {
 
         if (value1 < 115 && value2 < 115 && value3 < 115 && value4 < 115 && value5 < 115 && value6 < 115 &&
             value7 < 115 && value8 < 115 && value9 < 115 && value10 < 115) {
@@ -36,7 +39,7 @@ export class Home extends React.Component {
                 width_tiers: [value1, value3, value5, value7, value9],
                 height_tiers: [value2, value4, value6, value8, value10]
             })
-        }else{
+        } else {
             alert('Торт слишком большой! Введите значение меньше')
         }
     }
@@ -60,11 +63,7 @@ export class Home extends React.Component {
     }
 
     addElement(value) {
-        console.warn(value);
         this.setState({ elDecor: value });
-        // this.allDecor();
-        // console.log(this.state.elDecor);
-        // this.setState ({elDecor: {}});
     }
 
     allDecor() {
@@ -74,11 +73,16 @@ export class Home extends React.Component {
     }
 
     setCoord(e) {
+        const fot = document.getElementById('cake_place');
+
+        const rect = fot.getBoundingClientRect();
+
         const newDecor = {
             src: this.state.elDecor.src,
-            x: e.pageX,
-            y: e.pageY,
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
             width: this.state.elDecor.width,
+            id: this.state.elDecor.id,
         };
 
         this.setState({
@@ -87,10 +91,11 @@ export class Home extends React.Component {
         });
         console.log(this.state.elDecor, this.state.allDecor);
 
+
     }
 
-    handleStart () {
-        this.setState ({moving: true});
+    handleStart() {
+        this.setState({ moving: true });
     }
 
     handleDrag(e) {
@@ -99,13 +104,20 @@ export class Home extends React.Component {
     }
 
     handleStop(e) {
-        this.setState ({moving: false});
-        if (e.x >= 360 && e.x <= 420 && e.y >=30 && e.y <=100) {
-            this.removeIMG(item);
-            console.log ('stop');
+        setTimeout(() => this.setState({ moving: false }), 10);
+
+        const y = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
+        const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+        const fot = document.getElementById('basket');
+
+        if (fot) {
+            const rect = fot.getBoundingClientRect();
+
+            if (y > rect.top && y < rect.bottom && x > rect.left && x < rect.right) {
+                this.removeIMG(this.state.allDecor.find(el => el.id === +e.target.getAttribute('data-id')));
+            }
         }
         document.getElementById('basket').style.display = 'none';
-
     }
 
     removeIMG(item) {
@@ -120,19 +132,46 @@ export class Home extends React.Component {
         this.setState({ allDecor: all });
     }
 
+    savePicture() {
+        domtoimage.toBlob(document.getElementById('cake_place'))
+            .then(function (blob) {
+                console.log('blob', blob);
+                const URL = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+
+                link.href = URL;
+                link.download = 'cake.png';
+                link.click()
+                .catch(function (error) {
+                    console.error('oops, something went wrong!', error);
+                });
+
+                setTimeout(() => window.URL.revokeObjectURL(URL), 10000);
+            });
+    }
+
+    componentDidUpdate () {
+        let state = JSON.stringify(this.state);
+        localStorage.setItem ('cake', state);
+        console.log(localStorage.getItem('cake'));
+    }
 
     render() {
         let all = this.state.allDecor.map((item, index) => {
-            return (<div key={index}>
+            return (<div key={item.id}>
                 <Draggable
                     onStart={this.handleStart}
                     onDrag={this.handleDrag}
                     onStop={this.handleStop}>
                     <img src={item.src}
+                        draggable={false}
+                        data-id={item.id}
                         onContextMenu={this.removeIMG.bind(this, item)}
                         style={{
                             position: 'absolute', top: `${item.y}px`,
-                            left: `${item.x}px`, width: `${this.state.elDecor.width}`
+                            left: `${item.x}px`, width: `${item.width}`,
+                            zIndex: 1,
+                            transform: 'translate(-50%, -50%)'
                         }}
                     ></img>
                 </Draggable>
@@ -142,83 +181,85 @@ export class Home extends React.Component {
         return (
             <div id='wrapper'>
                 <div id='home'>
-                    <div id='basket' 
-                        style={{
-                        border: '1px dotted black', position: 'absolute', top: '5vh',
-                        left: '40vh', display: 'none'
-                    }}>
-                        <img
-                            style={{ border: '10px solid black' }}
-                            src='http://pngimg.com/uploads/recycle_bin/recycle_bin_PNG36.png'
-                            style={{ width: '40px' }}></img>
-                    </div>
+                    
                     <div id='cake_place' onClick={this.state.moving ? undefined : this.setCoord}>
                         {all}
 
-                        <div className={this.state.class} 
-                    style={{
-                        width: `${this.state.width_tiers[4] * 5}px`,
-                        height: `${this.state.height_tiers[4] * 5}px`,
-                        background: this.state.color_cake
-                    }}>
                         <div className={this.state.class}
                             style={{
                                 width: `${this.state.width_tiers[4] * 5}px`,
-                                height: `${this.state.height_tiers[4] * 5}px`
-                            }}></div>
-                            </div>
+                                height: `${this.state.height_tiers[4] * 5}px`,
+                                background: this.state.color_cake
+                            }}>
+                            <div className={this.state.class}
+                                style={{
+                                    width: `${this.state.width_tiers[4] * 5}px`,
+                                    height: `${this.state.height_tiers[4] * 5}px`
+                                }}></div>
+                        </div>
 
-                            <div className={this.state.class} 
+                        <div className={this.state.class}
                             style={{
                                 width: `${this.state.width_tiers[3] * 5}px`,
                                 height: `${this.state.height_tiers[3] * 5}px`,
                                 background: this.state.color_cake
                             }}>
-                        <div className={this.state.class}
-                            style={{
-                                width: `${this.state.width_tiers[3] * 5}px`,
-                                height: `${this.state.height_tiers[3] * 5}px`
-                            }}></div>
+                            <div className={this.state.class}
+                                style={{
+                                    width: `${this.state.width_tiers[3] * 5}px`,
+                                    height: `${this.state.height_tiers[3] * 5}px`
+                                }}></div>
                         </div>
 
-                        <div  className={this.state.class}
-                        style={{
+                        <div className={this.state.class}
+                            style={{
                                 width: `${this.state.width_tiers[2] * 5}px`,
                                 height: `${this.state.height_tiers[2] * 5}px`,
                                 background: this.state.color_cake
                             }}>
-                        <div className={this.state.class}
-                            style={{
-                                width: `${this.state.width_tiers[2] * 5}px`,
-                                height: `${this.state.height_tiers[2] * 5}px`
-                            }}></div>
-                            </div>
+                            <div className={this.state.class}
+                                style={{
+                                    width: `${this.state.width_tiers[2] * 5}px`,
+                                    height: `${this.state.height_tiers[2] * 5}px`
+                                }}></div>
+                        </div>
 
-                            <div className={this.state.class} style={{
-                                width: `${this.state.width_tiers[1] * 5}px`,
-                                height: `${this.state.height_tiers[1] * 5}px`,
-                                background: this.state.color_cake
-                            }}>
-                        <div className={this.state.class}
-                            style={{
-                                width: `${this.state.width_tiers[1] * 5}px`,
-                                height: `${this.state.height_tiers[1] * 5}px`
-                            }}></div>
-                                </div> 
+                        <div className={this.state.class} style={{
+                            width: `${this.state.width_tiers[1] * 5}px`,
+                            height: `${this.state.height_tiers[1] * 5}px`,
+                            background: this.state.color_cake
+                        }}>
+                            <div className={this.state.class}
+                                style={{
+                                    width: `${this.state.width_tiers[1] * 5}px`,
+                                    height: `${this.state.height_tiers[1] * 5}px`
+                                }}></div>
+                        </div>
 
-                            <div  className={this.state.class}
+                        <div className={this.state.class}
                             style={{
                                 width: `${this.state.width_tiers[0] * 5}px`,
                                 height: `${this.state.height_tiers[0] * 5}px`,
                                 background: this.state.color_cake
                             }}>
-                        <div className={this.state.class}
+                            <div className={this.state.class}
+                                style={{
+                                    width: `${this.state.width_tiers[0] * 5}px`,
+                                    height: `${this.state.height_tiers[0] * 5}px`
+                                }}></div>
+                        </div>
+                        <footer id='basket'
                             style={{
-                                width: `${this.state.width_tiers[0] * 5}px`,
-                                height: `${this.state.height_tiers[0] * 5}px`
-                            }}></div>
-                            </div>
-
+                                border: '2px dotted black',
+                                background: '#FFEFD5', padding: '20px', display: 'none',
+                                position: 'absolute',
+                                bottom: 0,
+                                left: 0,
+                                width: '100%',
+                                boxSizing: 'border-box',
+                            }}>
+                            <p>Перетяните картинку сюда для удаления</p>
+                        </footer>
                     </div>
                 </div>
 
@@ -228,26 +269,28 @@ export class Home extends React.Component {
                     addElement={(this.addElement.bind(this))}
                     arr={[{}, {}]} ></this.Page>
 
+                <button onClick={this.savePicture}>Сохранить макет</button>
+
                 <nav>
                     <button
                         className='nav_button'
                         onClick={() => this.setState({ show_page: 'tiers' })}>
-                        Ярусы торта
+                    <i className='fa fa-cake'></i>
+                        {/* Ярусы торта */}
                 </button>
                     <button
                         className='nav_button'
                         onClick={() => this.setState({ show_page: 'frost_cake' })}>
-                        Покрытие торта
+                    <i className="fa fa-spatula"></i>
+                        {/* Покрытие торта */}
                 </button>
                     <button
                         className='nav_button'
                         onClick={() => this.setState({ show_page: 'cake_decorating' })}>
-                        Украшение торта
+                    <i className="fa fa-candy"></i>
+                        {/* Украшение торта */}
                 </button>
                 </nav>
-
-
-                {/* {this.state.elDecor ? <Cookie_el addElement={this.addElement}/> : null} */}
             </div>
         )
     }

@@ -1,11 +1,4 @@
 import React from 'react';
-import Draggable from 'react-draggable'; 
-import ReactDOM from 'react-dom';
-import Cookie_el from './decor/cookie';
-import Lollipop_el from './decor/lollipops';
-import Flower_el from './decor/flower';
-import Macaron_el from './decor/macaron';
-import Fruit_el from './decor/fruit';
 import img1 from './src/cookies/1.png';
 import img2 from './src/cookies/2.png';
 import img3 from './src/cookies/3.png';
@@ -77,10 +70,6 @@ export default class CakeDecorating extends React.Component {
                         url: img6,
                         width: '13vh'
                     },
-                    // {
-                    //     url: img7,
-                    //     width: '8vh'
-                    // },
                     {
                         url: img8,
                         width: '10vh'
@@ -380,10 +369,6 @@ export default class CakeDecorating extends React.Component {
         this.whatPicture = this.whatPicture.bind(this);
     }
 
-    // add(value) {
-    //     this.setState({ elDecor: value });
-    // }
-
     list() {
         return (this.state.groups.map(group => (
             <div key={group.id} onClick={() => this.setState({ decor_type: group.id })}>
@@ -408,19 +393,19 @@ export default class CakeDecorating extends React.Component {
     }
 
     whatPicture(event) {
+        const elDecor = {
+            src: event.target.src,
+            x: 0, y: 0,
+            width: event.target.style.width,
+            id: Math.floor(Math.random() * 1000) + Date.now(),
+        };
         this.setState({
-            elDecor: {
-                src: event.target.src,
-                x: 0, y: 0,
-                width: event.target.style.width,
-            }
+            elDecor,
         });
-        console.log(event.target.style);
-        this.props.addElement(this.state.elDecor);
+        this.props.addElement(elDecor);
     }
 
     render() {
-        console.log(this.state.decor_type);
         if (this.state.decor_type === 0) {
             return (
                 <div id="options">
