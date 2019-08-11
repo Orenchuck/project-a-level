@@ -27,6 +27,7 @@ export class Home extends React.Component {
         this.handleStart = this.handleStart.bind(this);
         this.handleStop = this.handleStop.bind(this);
         this.savePicture = this.savePicture.bind(this);
+        this.toStart = this.toStart.bind(this);
     }
 
 
@@ -82,16 +83,14 @@ export class Home extends React.Component {
             x: e.clientX - rect.left,
             y: e.clientY - rect.top,
             width: this.state.elDecor.width,
-            id: this.state.elDecor.id,
+            id: Math.floor(Math.random() * 1000) + Date.now(),
         };
 
         this.setState({
             elDecor: newDecor,
             allDecor: [...this.state.allDecor, newDecor]
         });
-        console.log(this.state.elDecor, this.state.allDecor);
-
-
+        console.log(this.state.elDecor);
     }
 
     handleStart() {
@@ -99,12 +98,28 @@ export class Home extends React.Component {
     }
 
     handleDrag(e) {
-        console.log(e);
         document.getElementById('basket').style.display = 'block';
     }
 
     handleStop(e) {
         setTimeout(() => this.setState({ moving: false }), 10);
+        // const res = /translate\(\s*([\d.-]+)px,\s*([\d.-]+)px\)/.exec(style.transform)
+        // console.log(res);
+        let first = e.target.style.transform.indexOf('px,');
+        let newX = +e.target.style.transform.slice(10, first);
+        let newY = +e.target.style.transform.slice((first+3), -3);
+
+        let decor = this.state.allDecor;
+
+        for (let i=0; i<decor.length; i+=1) {
+            if (decor[i].id == e.target.dataset.id) {
+                decor[i].x += newX;
+                decor[i].y += newY;
+
+            }
+        }
+        
+        this.setState ({allDecor: decor});
 
         const y = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
         const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
@@ -118,6 +133,8 @@ export class Home extends React.Component {
             }
         }
         document.getElementById('basket').style.display = 'none';
+
+        this.forceUpdate();
     }
 
     removeIMG(item) {
@@ -150,15 +167,27 @@ export class Home extends React.Component {
             });
     }
 
+    toStart () {
+        this.setState ({
+            show_page: 'tiers',
+            width_tiers: [30, 0, 0, 0, 0],
+            height_tiers: [10, 0, 0, 0, 0],
+            color_cake: '#520599',
+            class: 'cream',
+            elDecor: {},
+            allDecor: [],
+            moving: false,
+        })
+    }
+
     componentDidUpdate () {
         let state = JSON.stringify(this.state);
         localStorage.setItem ('cake', state);
-        console.log(localStorage.getItem('cake'));
     }
 
     render() {
         let all = this.state.allDecor.map((item, index) => {
-            return (<div key={item.id}>
+            return (<div key={`${item.id}-${item.x}-${item.y}`}>
                 <Draggable
                     onStart={this.handleStart}
                     onDrag={this.handleDrag}
@@ -170,7 +199,7 @@ export class Home extends React.Component {
                         style={{
                             position: 'absolute', top: `${item.y}px`,
                             left: `${item.x}px`, width: `${item.width}`,
-                            zIndex: 1,
+                            zIndex: 2,
                             transform: 'translate(-50%, -50%)'
                         }}
                     ></img>
@@ -182,7 +211,7 @@ export class Home extends React.Component {
             <div id='wrapper'>
                 <div id='home'>
                     
-                    <div id='cake_place' onClick={this.state.moving ? undefined : this.setCoord}>
+                    <div id='cake_place' onClick={this.setCoord}>
                         {all}
 
                         <div className={this.state.class}
@@ -248,16 +277,7 @@ export class Home extends React.Component {
                                     height: `${this.state.height_tiers[0] * 5}px`
                                 }}></div>
                         </div>
-                        <footer id='basket'
-                            style={{
-                                border: '2px dotted black',
-                                background: '#FFEFD5', padding: '20px', display: 'none',
-                                position: 'absolute',
-                                bottom: 0,
-                                left: 0,
-                                width: '100%',
-                                boxSizing: 'border-box',
-                            }}>
+                        <footer id='basket'>
                             <p>Перетяните картинку сюда для удаления</p>
                         </footer>
                     </div>
@@ -270,6 +290,7 @@ export class Home extends React.Component {
                     arr={[{}, {}]} ></this.Page>
 
                 <button onClick={this.savePicture}>Сохранить макет</button>
+                <button onClick={this.toStart}>Обнулить</button>
 
                 <nav>
                     <button
