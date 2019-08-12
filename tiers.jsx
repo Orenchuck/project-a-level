@@ -48,90 +48,90 @@ export default class Tiers extends React.Component {
         this.ClickDel2 = this.ClickDel2.bind(this);
         this.ClickDel3 = this.ClickDel3.bind(this);
         this.ClickDel4 = this.ClickDel4.bind(this);
-        
-        
+
+
     }
 
     ChangeWidthTiers1() {
         this.setState({ width_tiers1: event.target.value });
-     }
-     ChangeHeightTiers1() {
+    }
+    ChangeHeightTiers1() {
         this.setState({ height_tiers1: event.target.value });
-     }
+    }
 
 
-     ChangeWidthTiers2() {
+    ChangeWidthTiers2() {
         this.setState({ width_tiers2: event.target.value });
-     }
-     ChangeHeightTiers2() {
+    }
+    ChangeHeightTiers2() {
         this.setState({ height_tiers2: event.target.value });
-     }
+    }
 
 
-     ChangeWidthTiers3() {
+    ChangeWidthTiers3() {
         this.setState({ width_tiers3: event.target.value });
-     }
-     ChangeHeightTiers3() {
+    }
+    ChangeHeightTiers3() {
         this.setState({ height_tiers3: event.target.value });
-     }
+    }
 
 
-     ChangeWidthTiers4() {
+    ChangeWidthTiers4() {
         this.setState({ width_tiers4: event.target.value });
-     }
-     ChangeHeightTiers4() {
+    }
+    ChangeHeightTiers4() {
         this.setState({ height_tiers4: event.target.value });
-     }
+    }
 
 
-     ChangeWidthTiers5() {
+    ChangeWidthTiers5() {
         this.setState({ width_tiers5: event.target.value });
-     }
-     ChangeHeightTiers5() {
+    }
+    ChangeHeightTiers5() {
         this.setState({ height_tiers5: event.target.value });
-     }
+    }
 
-     ClickDel1(){
-        this.setState({ width_tiers2: '', height_tiers2: '', tier2: 'none', buttAdd2: 'block'})
-        }
+    ClickDel1() {
+        this.setState({ width_tiers2: '', height_tiers2: '', tier2: 'none', buttAdd2: 'block' })
+    }
 
-     ClickDel2(){
-        this.setState({ width_tiers3: '', height_tiers3: '', tier3: 'none', buttAdd3: 'block'})
-        }
+    ClickDel2() {
+        this.setState({ width_tiers3: '', height_tiers3: '', tier3: 'none', buttAdd3: 'block' })
+    }
 
-        ClickDel3(){
-            this.setState({ width_tiers4: '', height_tiers4: '', tier4: 'none', buttAdd4: 'block'})
-            }
+    ClickDel3() {
+        this.setState({ width_tiers4: '', height_tiers4: '', tier4: 'none', buttAdd4: 'block' })
+    }
 
-             ClickDel4(){
-            this.setState({ width_tiers5: '', height_tiers5: '', tier5: 'none', buttAdd5: 'block'})
-            }
+    ClickDel4() {
+        this.setState({ width_tiers5: '', height_tiers5: '', tier5: 'none', buttAdd5: 'block' })
+    }
 
-        ButtonAddTier2(){
-            this.setState({tier2: 'block', buttAdd2: 'none'})
-        }
+    ButtonAddTier2() {
+        this.setState({ tier2: 'block', buttAdd2: 'none' })
+    }
 
-        ButtonAddTier3(){
-            this.setState({tier3: 'block', buttAdd3: 'none'})
-        }
+    ButtonAddTier3() {
+        this.setState({ tier3: 'block', buttAdd3: 'none' })
+    }
 
-        ButtonAddTier4(){
-            this.setState({tier4: 'block', buttAdd4: 'none'})
-        }
+    ButtonAddTier4() {
+        this.setState({ tier4: 'block', buttAdd4: 'none' })
+    }
 
-        ButtonAddTier5(){
-            this.setState({tier5: 'block', buttAdd5: 'none'})
-        }
+    ButtonAddTier5() {
+        this.setState({ tier5: 'block', buttAdd5: 'none' })
+    }
 
-     ClickButton(){
-         this.props.StepTiers(+this.state.width_tiers1, +this.state.height_tiers1, 
-           +this.state.width_tiers2,  +this.state.height_tiers2,
-           +this.state.width_tiers3, +this.state.height_tiers3,
-           +this.state.width_tiers4, +this.state.height_tiers4,
-           +this.state.width_tiers5, +this.state.height_tiers5);
-     }
+    ClickButton() {
+        this.props.StepTiers(+this.state.width_tiers1, +this.state.height_tiers1,
+            +this.state.width_tiers2, +this.state.height_tiers2,
+            +this.state.width_tiers3, +this.state.height_tiers3,
+            +this.state.width_tiers4, +this.state.height_tiers4,
+            +this.state.width_tiers5, +this.state.height_tiers5);
+    }
 
-    
+
 
     render() {
         return (
@@ -139,11 +139,11 @@ export default class Tiers extends React.Component {
                 <div>
                     <div className='headline'>Первый ярус</div>
 
-                   <div className='group'>{/*Ширина яруса*/}
-                       <input type='number' min='10' max='50'
-                              value={this.state.width_tiers1} 
-                              onChange={this.ChangeWidthTiers1} 
-                              required>
+                    <div className='group'>{/*Ширина яруса*/}
+                        <input type='number' min='10' max='50'
+                            value={this.state.width_tiers1}
+                            onChange={this.ChangeWidthTiers1}
+                            required>
                         </input>
                         <span className='bar'></span>
                         <label className='size'>Ширина яруса, см</label>
@@ -151,23 +151,33 @@ export default class Tiers extends React.Component {
 
                     <div className='group'>{/*Высота яруса*/}
                         <input type='number' min='3' max='25'
-                               value={this.state.height_tiers1} 
-                               onChange={this.ChangeHeightTiers1} 
-                               required>
+                            value={this.state.height_tiers1}
+                            onChange={this.ChangeHeightTiers1}
+                            required>
                         </input>
                         <span className='bar'></span>
                         <label className='size'>Высота яруса, см</label>
                     </div>
-                    <button style ={{ display: this.state.buttAdd2}} onClick={this.ButtonAddTier2}>Добавить ярус</button>
+                    <div className="b_line">
+                        <button style={{ display: this.state.buttAdd2 }}
+                            onClick={this.ButtonAddTier2}>
+                            Добавить ярус
+                        </button>
+                        <button style={{ display: this.state.buttAdd2 }}
+                            onClick={this.ButtonAddTier2}
+                            onClick={this.ClickButton}>
+                            Применить
+                        </button>
+                    </div>
                 </div>
 
-                
-            <div style ={{ display: this.state.tier2}}>
+
+                <div style={{ display: this.state.tier2 }}>
                     <div className='headline'>Второй ярус <button className='ButDel' onClick={this.ClickDel1}>Удалить ярус</button></div>
                     <div className='group'>{/*Ширина яруса*/}
                         <input type='number' min='10' max='45'
-                               value={this.state.width_tiers2} 
-                               onChange={this.ChangeWidthTiers2}>
+                            value={this.state.width_tiers2}
+                            onChange={this.ChangeWidthTiers2}>
                         </input>
                         <span className='bar'></span>
                         <label className='size'>Ширина яруса, см</label>
@@ -175,79 +185,110 @@ export default class Tiers extends React.Component {
 
                     <div className='group'>{/*Высота яруса*/}
                         <input type='number' min='3' max='25'
-                               value={this.state.height_tiers2} 
-                               onChange={this.ChangeHeightTiers2}>
+                            value={this.state.height_tiers2}
+                            onChange={this.ChangeHeightTiers2}>
                         </input>
                         <span className='bar'></span>
                         <label className='size'>Высота яруса, см</label>
                     </div>
-                    <button style ={{ display: this.state.buttAdd3}} onClick={this.ButtonAddTier3}>Добавить ярус</button>
+                    <div className="b_line">
+                        <button style={{ display: this.state.buttAdd3 }}
+                            onClick={this.ButtonAddTier3}>
+                            Добавить ярус
+                        </button>
+                        <button style={{ display: this.state.buttAdd3 }}
+                            onClick={this.ButtonAddTier3}
+                            onClick={this.ClickButton}>
+                            Применить
+                        </button>
+                    </div>
                 </div>
-            
-                <div style ={{ display: this.state.tier3}}>
-                <div className='headline'>Третий ярус <button className='ButDel' onClick={this.ClickDel2}>Удалить ярус</button></div>
-                <div className='group'>{/*Ширина яруса*/}
-                    <input type='number' min='10' max='40'
-                           value={this.state.width_tiers3} 
-                           onChange={this.ChangeWidthTiers3}>
-                    </input>
-                    <span className='bar'></span>
-                    <label className='size'>Ширина яруса, см</label>
-                </div>
-                <div className='group'>{/*Высота яруса*/}
-                    <input type='number' min='3' max='25'
-                            value={this.state.height_tiers3} 
+
+                <div style={{ display: this.state.tier3 }}>
+                    <div className='headline'>Третий ярус <button className='ButDel' onClick={this.ClickDel2}>Удалить ярус</button></div>
+                    <div className='group'>{/*Ширина яруса*/}
+                        <input type='number' min='10' max='40'
+                            value={this.state.width_tiers3}
+                            onChange={this.ChangeWidthTiers3}>
+                        </input>
+                        <span className='bar'></span>
+                        <label className='size'>Ширина яруса, см</label>
+                    </div>
+                    <div className='group'>{/*Высота яруса*/}
+                        <input type='number' min='3' max='25'
+                            value={this.state.height_tiers3}
                             onChange={this.ChangeHeightTiers3}>
-                    </input>
-                    <span className='bar'></span>
-                    <label className='size'>Высота яруса, см</label>
-                </div>
-                 <button style ={{ display: this.state.buttAdd4}} onClick={this.ButtonAddTier4}>Добавить ярус</button>
+                        </input>
+                        <span className='bar'></span>
+                        <label className='size'>Высота яруса, см</label>
+                    </div>
+                    <div className="b_line">
+                        <button style ={{ display: this.state.buttAdd4}} 
+                                onClick={this.ButtonAddTier4}>
+                                Добавить ярус
+                        </button>
+                        <button style ={{ display: this.state.buttAdd4}} 
+                                onClick={this.ButtonAddTier4}
+                                onClick = {this.ClickButton}>
+                                Применить
+                        </button>
+                    </div>   
                 </div>
 
-                <div style ={{ display: this.state.tier4}}>
-                <div className='headline'>4 ярус <button className='ButDel' onClick={this.ClickDel3}>Удалить ярус</button></div>
-                <div className='group'>{/*Ширина яруса*/}
-                    <input type='number' min='10' max='40'
-                           value={this.state.width_tiers4} 
-                           onChange={this.ChangeWidthTiers4}>
-                    </input>
-                    <span className='bar'></span>
-                    <label className='size'>Ширина яруса, см</label>
-                </div>
-                <div className='group'>{/*Высота яруса*/}
-                    <input type='number' min='3' max='25'
-                            value={this.state.height_tiers4} 
+                <div style={{ display: this.state.tier4 }}>
+                    <div className='headline'>4 ярус <button className='ButDel' onClick={this.ClickDel3}>Удалить ярус</button></div>
+                    <div className='group'>{/*Ширина яруса*/}
+                        <input type='number' min='10' max='40'
+                            value={this.state.width_tiers4}
+                            onChange={this.ChangeWidthTiers4}>
+                        </input>
+                        <span className='bar'></span>
+                        <label className='size'>Ширина яруса, см</label>
+                    </div>
+                    <div className='group'>{/*Высота яруса*/}
+                        <input type='number' min='3' max='25'
+                            value={this.state.height_tiers4}
                             onChange={this.ChangeHeightTiers4}>
-                    </input>
-                    <span className='bar'></span>
-                    <label className='size'>Высота яруса, см</label>
-                </div>
-                <button style ={{ display: this.state.buttAdd5}} onClick={this.ButtonAddTier5}>Добавить ярус</button>
+                        </input>
+                        <span className='bar'></span>
+                        <label className='size'>Высота яруса, см</label>
+                    </div>
+                    <div className="b_line">
+                        <button style ={{ display: this.state.buttAdd5}} 
+                                onClick={this.ButtonAddTier5}>
+                                Добавить ярус
+                        </button>
+                        <button style ={{ display: this.state.buttAdd5}} 
+                                onClick={this.ButtonAddTier5}
+                                onClick = {this.ClickButton}>
+                                Применить
+                        </button>
+                    </div>   
                 </div>
 
-                <div style ={{ display: this.state.tier5}}>
-                <div className='headline'>5 ярус <button className='ButDel' onClick={this.ClickDel4}>Удалить ярус</button></div>
-                <div className='group'>{/*Ширина яруса*/}
-                    <input type='number' min='10' max='40'
-                           value={this.state.width_tiers5} 
-                           onChange={this.ChangeWidthTiers5}>
-                    </input>
-                    <span className='bar'></span>
-                    <label className='size'>Ширина яруса, см</label>
-                </div>
-                <div className='group'>{/*Высота яруса*/}
-                    <input type='number' min='3' max='25'
-                            value={this.state.height_tiers5} 
+                <div style={{ display: this.state.tier5 }}>
+                    <div className='headline'>5 ярус <button className='ButDel' onClick={this.ClickDel4}>Удалить ярус</button></div>
+                    <div className='group'>{/*Ширина яруса*/}
+                        <input type='number' min='10' max='40'
+                            value={this.state.width_tiers5}
+                            onChange={this.ChangeWidthTiers5}>
+                        </input>
+                        <span className='bar'></span>
+                        <label className='size'>Ширина яруса, см</label>
+                    </div>
+                    <div className='group'>{/*Высота яруса*/}
+                        <input type='number' min='3' max='25'
+                            value={this.state.height_tiers5}
                             onChange={this.ChangeHeightTiers5}>
-                    </input>
-                    <span className='bar'></span>
-                    <label className='size'>Высота яруса, см</label>
+                        </input>
+                        <span className='bar'></span>
+                        <label className='size'>Высота яруса, см</label>
+                    </div>
+                    <button
+                            onClick = {this.ClickButton}>
+                            Применить
+                        </button>
                 </div>
-                </div>
-
-
-                <button onClick = {this.ClickButton}>Применить</button>   
             </div>
         )
     }

@@ -289,9 +289,6 @@ export class Home extends React.Component {
                     addElement={(this.addElement.bind(this))}
                     arr={[{}, {}]} ></this.Page>
 
-                <button onClick={this.savePicture}>Сохранить макет</button>
-                <button onClick={this.toStart}>Обнулить</button>
-
                 <nav>
                     <button
                         className='nav_button'
@@ -310,6 +307,18 @@ export class Home extends React.Component {
                         onClick={() => this.setState({ show_page: 'cake_decorating' })}>
                     <i className="fa fa-candy"></i>
                         {/* Украшение торта */}
+                </button>
+                <button 
+                        className='nav_button'
+                        onClick={this.toStart}>
+                        <i className="fa fa-refresh"></i>
+                        {/* Обнулить */}
+                </button>
+                    <button 
+                        className='nav_button'
+                        onClick={this.savePicture}>
+                    <i className="fa fa-save"></i>
+                        {/* Сохранить макет */}
                 </button>
 
                 </nav>
