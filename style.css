@@ -161,7 +161,7 @@ input[type="number"]:focus {
     outline: none;
 }
   /* LABEL ======================================= */
-.size {
+  .size {
     color: #999;
     font-size: 14px;
     position: absolute;
@@ -174,7 +174,7 @@ input[type="number"]:focus {
   
 /* active state */
 input:focus ~ label, input:valid ~ label {
-    padding-top: -2px;
+    padding-top: 0px;
     top: -13px;
     font-size: 14px;
     color: #5264AE;
