@@ -533,9 +533,10 @@ export default class CakeDecorating extends React.Component {
 
     list() {
         return (this.state.groups.map(group => (
-            <div className="headline" key={group.id} onClick={() => this.setState({ decor_type: group.id })}>
+            <div className="headline" 
+                 key={group.id} 
+                 onClick={() => this.setState({ decor_type: group.id })}>
                 {group.text}
-                <br />
             </div>
         )
         ))
