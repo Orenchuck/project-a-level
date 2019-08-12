@@ -1,7 +1,7 @@
 {
   "name": "MakeUrCake",
-  "theme_color": "#7617aa",
-  "background_color": "#d716b3",
+  "theme_color": "#8a275c",
+  "background_color": "#f3e6ed",
   "display": "standalone",
   "orientation": "portrait",
   "Scope": "/project-a-level",
