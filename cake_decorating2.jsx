@@ -118,7 +118,7 @@ export default class CakeDecorating extends React.Component {
                     },
                     {
                         url: img2,
-                        width: '65px'
+                        width: '35px'
                     },
                     {
                         url: img3,
@@ -134,11 +134,11 @@ export default class CakeDecorating extends React.Component {
                     },
                     {
                         url: img6,
-                        width: '67px'
+                        width: '47px'
                     },
                     {
                         url: img8,
-                        width: '59px'
+                        width: '35px'
                     },
                     {
                         url: img9,
@@ -146,19 +146,19 @@ export default class CakeDecorating extends React.Component {
                     },
                     {
                         url: img10,
-                        width: '59px'
+                        width: '35px'
                     },
                     {
                         url: img11,
-                        width: '61px'
+                        width: '45px'
                     },
                     {
                         url: img12,
-                        width: '61px'
+                        width: '50px'
                     },
                     {
                         url: img13,
-                        width: '59px'
+                        width: '35px'
                     },
                     {
                         url: img14,
@@ -166,7 +166,7 @@ export default class CakeDecorating extends React.Component {
                     },
                     {
                         url: img15,
-                        width: '67px'
+                        width: '35px'
                     },
                     {
                         url: img16,
