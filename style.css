@@ -3,7 +3,6 @@ body{
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    background-size: cover;
     height: 100vh;
 }
 
@@ -21,6 +20,7 @@ body{
     width: 100%;
     margin: auto;
     background-image: url('src/bg.png');
+    background-size: cover;
 }
 
  /* CAKE PLACE ===========*/
